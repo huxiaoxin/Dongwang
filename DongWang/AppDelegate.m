@@ -26,6 +26,7 @@
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     sleep(2);
+    
     NSLog(@"----%@",[NSString encryptUseDESa:@"SYCM"]);
     #pragma mark -- 初始化导航配置
     [self initGKNavConfigers];
@@ -51,7 +52,7 @@
     DongwangConfigers.backStyle = GKNavigationBarBackStyleBlack;
     DongwangConfigers.backgroundColor = LGDMianColor;
     DongwangConfigers.titleColor = [UIColor blackColor];
-    DongwangConfigers.titleFont = KSysFont(17);
+    DongwangConfigers.titleFont = KBlFont(font(17));
 //    DongwangConfigers.gk_navItemLeftSpace = K(15);
 }
 #pragma mark -- 用户启动app

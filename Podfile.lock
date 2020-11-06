@@ -22,6 +22,9 @@ PODS:
   - JCore (2.3.6)
   - JPush (3.3.6):
     - JCore (< 3.0.0, >= 2.0.0)
+  - KJBannerView (1.3.5):
+    - KJBannerView/KJBannerView (= 1.3.5)
+  - KJBannerView/KJBannerView (1.3.5)
   - LYEmptyView (1.3.1)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
@@ -161,6 +164,7 @@ PODS:
     - WHC_ModelSqliteKit/standard (= 1.3.0)
   - WHC_ModelSqliteKit/standard (1.3.0)
   - XHInputView (1.1.1)
+  - ZKCycleScrollView (2.0.1)
   - ZWLimitCounter (0.0.4)
   - ZWPlaceHolder (0.0.2)
 
@@ -171,6 +175,7 @@ DEPENDENCIES:
   - HUPhotoBrowser (~> 1.4.5)
   - IQKeyboardManager
   - JPush
+  - KJBannerView
   - LYEmptyView
   - Masonry
   - MBProgressHUD
@@ -187,6 +192,7 @@ DEPENDENCIES:
   - WechatOpenSDK
   - WHC_ModelSqliteKit (~> 1.3.0)
   - XHInputView (~> 1.1.1)
+  - ZKCycleScrollView
   - ZWLimitCounter (~> 0.0.4)
   - ZWPlaceHolder (~> 0.0.2)
 
@@ -199,6 +205,7 @@ SPEC REPOS:
     - IQKeyboardManager
     - JCore
     - JPush
+    - KJBannerView
     - LYEmptyView
     - Masonry
     - MBProgressHUD
@@ -217,6 +224,7 @@ SPEC REPOS:
     - WechatOpenSDK
     - WHC_ModelSqliteKit
     - XHInputView
+    - ZKCycleScrollView
     - ZWLimitCounter
     - ZWPlaceHolder
 
@@ -237,6 +245,7 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   JCore: 06a5c80c176c5e46e8698eec3c780e1abb0bf180
   JPush: a401b946dcc76b37335422487201bc1ecc8dd296
+  KJBannerView: b55b029353d0762be403498f4258c5de03e15753
   LYEmptyView: b6d418cfa38b78df0cf243f9a9c25ccbdc399922
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -256,9 +265,10 @@ SPEC CHECKSUMS:
   WechatOpenSDK: 6a4d1436c15b3b5fe2a0bd383f3046010186da44
   WHC_ModelSqliteKit: dfafef3ee872dedd9823395291fc80bf37eac46d
   XHInputView: d0dcd226f1df1d288326bdf8eb620221cc6ed3a7
+  ZKCycleScrollView: 4b353d17b7f469b245a1c606d5a977e72b940895
   ZWLimitCounter: 382d8a4f063980f18022749672b89e0558087007
   ZWPlaceHolder: d55cce10c9930b48c31bf48e7f4748974a31f7e0
 
-PODFILE CHECKSUM: 031e053cc154ac7165aa4a5a7806c5b829107d0d
+PODFILE CHECKSUM: 307e6f2b39c4e4af4b4ec9d5ca227ebcec3d8f64
 
 COCOAPODS: 1.9.3

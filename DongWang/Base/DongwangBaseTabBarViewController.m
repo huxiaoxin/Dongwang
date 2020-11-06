@@ -43,7 +43,7 @@
     if ([tabbarModel.status integerValue] == 1) {
         //显示活动
         
-        titleArr = [NSMutableArray arrayWithObjects:@"首页",@"任务", @"",@"发现",@"我的", nil];
+        titleArr = [NSMutableArray arrayWithObjects:@"首页",@"分类", @"",@"发现",@"我的", nil];
         imageNormalArr = [NSMutableArray arrayWithObjects:@"shouyeweixuanzhong",@"fenleiweixuanzhong", tabbarModel.picture,@"PathFill",@"wodeweixuanzhong", nil];
         imageSelectedArr = [NSMutableArray arrayWithObjects:@"shouyexuanzhong",@"fenleixuanzhong", tabbarModel.picture,@"PathXuanFill",@"wodexuanzhong", nil];
         NSString *tempH5Url = [NSString stringWithFormat:@"%@", tabbarModel.h5Url];

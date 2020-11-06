@@ -18,6 +18,7 @@
 @property(nonatomic,strong) ProcessLaunchImageView * AdpageView;
 @property(nonatomic,strong) DongwangAdpageModel * CuurentpageModel;
 @property(nonatomic,strong) UIImageView *  DongwangImgView;
+@property(nonatomic,strong) DongwangTabbarModel * SeltecdModel;
 @end
 
 @implementation ADPageViewController
@@ -30,10 +31,14 @@
             dongwangVc.imgWeb =  weakSelf.CuurentpageModel.url;
             UINavigationController * Nav = [UINavigationController rootVC:dongwangVc translationScale:YES];
             [AppDelegate getAppDelegate].window.rootViewController =  Nav;
-            
         } btnClickBlock:^{
             if ([UserManager userisLogoin]) {
-                [weakSelf tabarRequest];
+//                [weakSelf tabarRequest];
+                if (weakSelf.SeltecdModel) {
+                [weakSelf loadHomeTabbarWithTabbarModel:weakSelf.SeltecdModel];
+                }else{
+                [weakSelf loadHomeTabbarWithTabbarModel:nil];
+                }
             }else{
                 NSString *shanyanLogin = [NSString stringWithFormat:@"%@", [NSUserDefaults ch_customObjectForKey:CHSYTagPhoneNumberBOOL]];
                 [weakSelf DongwangLogoinConfigerType:shanyanLogin];
@@ -54,13 +59,14 @@
         if ([dic[@"err"] isEqualToString:@"00000"]) {
             NSDictionary *tempData = (NSDictionary *)dic[@"dat"];
             DongwangTabbarModel * model = [DongwangTabbarModel BaseinitWithDic:tempData];
-            [weakself loadHomeTabbarWithTabbarModel:model];
+            weakself.SeltecdModel = model;
+//            [weakself loadHomeTabbarWithTabbarModel:model];
         } else {
-            [weakself loadHomeTabbarWithTabbarModel:nil];
+//            [weakself loadHomeTabbarWithTabbarModel:nil];
         }
     } Failure:^(NSError *error) {
 //        [CHShowMessageHud dismissHideHUD:self.view];
-        [weakself loadHomeTabbarWithTabbarModel:nil];
+//        [weakself loadHomeTabbarWithTabbarModel:nil];
     }];
 
 }
@@ -84,6 +90,8 @@
     [super viewDidLoad];
     self.gk_navigationBar.hidden = YES;
     self.view.backgroundColor = [UIColor whiteColor];
+    [self tabarRequest];
+    
     
 //    UIImageView * DongwangImgView = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
 //    DongwangImgView.image = [UIImage LaunchImgNameSize];
@@ -133,7 +141,7 @@
     //验证码登
     DongwangCodeLoginViewController * DongwangLoginVc = [[DongwangCodeLoginViewController alloc]init];
     UINavigationController * DongwangNav = [UINavigationController rootVC:DongwangLoginVc translationScale:YES];
-    [self presentViewController:DongwangNav animated:NO completion:nil];   
+    [AppDelegate getAppDelegate].window.rootViewController = DongwangNav;
     }
     
 }

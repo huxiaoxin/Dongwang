@@ -12,6 +12,8 @@
 @property(nonatomic,strong) WKWebView * wkweb;
 @property(nonatomic,strong) UIButton * backBtn;
 @property(nonatomic,strong) UIView * backView;
+@property(nonatomic,strong) UIImageView *  bakcNavImgView;
+@property(nonatomic,strong) UILabel *  NavTitle;
 @end
 
 @implementation DongwangPrivetaWebViewController
@@ -22,17 +24,22 @@
     }
     return _backView;
 }
-
+-(UIImageView *)bakcNavImgView{
+    if (!_bakcNavImgView) {
+        _bakcNavImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, NaviH)];
+        _bakcNavImgView.backgroundColor =  [UIColor whiteColor];
+        _bakcNavImgView.userInteractionEnabled = YES;
+        
+    }
+    return _bakcNavImgView;
+}
 -(UIButton *)backBtn{
     if (!_backBtn) {
-        
-//        UIView * backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, K(40), K(40))];
-        
         _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_backBtn addTarget:self action:@selector(ShuyunBackBtnClick) forControlEvents:UIControlEventTouchUpInside];
-        [_backBtn setImage:[UIImage imageNamed:@"btn_back_black"] forState:UIControlStateNormal];
+        [_backBtn sizeToFit];
+        _backBtn.origin = CGPointMake(kLevelSpace(20), kVertiSpace(25));
         [_backBtn setEnlargeEdgeWithTop:25 right:25 bottom:25 left:25];
-//        [_backBtn setBackgroundColor:[UIColor whiteColor]];
     }
     return _backBtn;
 }
@@ -40,11 +47,31 @@
 -(void)ShuyunBackBtnClick{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+-(UILabel *)NavTitle{
+    if (!_NavTitle) {
+        _NavTitle = [[UILabel alloc]init];
+        _NavTitle.textAlignment = NSTextAlignmentCenter;
+        _NavTitle.textColor=  [UIColor whiteColor];
+        _NavTitle.font = KSysFont(font(17));
+        _NavTitle.frame = CGRectMake(0, StatuBar_Height+K(6), SCREEN_WIDTH, K(20));
+//        [_NavTitle sizeToFit];
+//        _NavTitle.text = @"加载中....";
+    }
+    return _NavTitle;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = @"加载中...";
+    self.gk_navigationBar.hidden = YES;
+    [self.view addSubview:self.bakcNavImgView];
+    [_bakcNavImgView addSubview:self.backBtn];
+    [_bakcNavImgView addSubview:self.NavTitle];
     [self.view addSubview:self.wkweb];
-    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",Protocl_Url,self.protoclUrlText]];
+
+    
+//    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",Protocl_Url,self.protoclUrlText]];
+        NSURL * url = [NSURL URLWithString:@"http://192.168.3.157/dongwang_h5/answer_default"];
+
     [_wkweb loadRequest:[NSURLRequest requestWithURL:url]];
     [CHShowMessageHud showHUDPlainText:@"" view:self.view];
 
@@ -74,14 +101,28 @@
 {
     NSDictionary * dic = message.body;
     NSLog(@"body----%@    name=%@",message.body,message.name);
+    //标题
     NSString * titleText   = [NSString stringWithFormat:@"%@",dic[@"title"][@"name"]];
-    self.gk_navTitle =  titleText;
+    //文字颜色
     NSString * text_color = [NSString stringWithFormat:@"%@",dic[@"title"][@"text_color"]];
-//    self.gk_navBackgroundColor = [UIColor colorWithHexString:text_color];
-    self.gk_navLeftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.backBtn];
-    self.gk_navItemLeftSpace =  K(20);
-    
-
+    NSString * imageText = [NSString stringWithFormat:@"%@",dic[@"backgroud"][@"image"]];
+    //背景色
+    NSString * imgebackColor = [NSString stringWithFormat:@"%@",dic[@"backgroud"][@"color"]];
+    //按钮
+    NSString * left_btn  = [NSString stringWithFormat:@"%@",dic[@"left_btn"][@"type"]];
+    NSLog(@"------%@",left_btn);
+    if ([left_btn isEqualToString:@"light"]) {
+    [_backBtn setImage:[UIImage imageNamed:@"btn_back_white"] forState:UIControlStateNormal];
+    }else{
+    [_backBtn setImage:[UIImage imageNamed:@"btn_back_black"] forState:UIControlStateNormal];
+    }
+    if ([[dic allKeys] containsObject:@"image"]) {
+        [self.bakcNavImgView sd_setImageWithURL:[NSURL URLWithString:imageText]];
+    }else{
+    self.bakcNavImgView.backgroundColor = [UIColor colorWithHexString:imgebackColor];
+    }
+    self.NavTitle.text = titleText;
+    self.NavTitle.textColor = [UIColor colorWithHexString:text_color];
 }
 // 页面开始加载时调用
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{

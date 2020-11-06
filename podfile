@@ -26,4 +26,6 @@ pod 'CL_ShanYanSDK'
 pod 'pop'
 pod 'WechatOpenSDK'
 pod 'MBProgressHUD'
+pod 'KJBannerView' # 轮播图
+pod 'ZKCycleScrollView'
 end

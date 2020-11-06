@@ -57,6 +57,15 @@
 		4A14059B253F0FA30070F5B8 /* Windwound.html in Resources */ = {isa = PBXBuildFile; fileRef = 4A14059A253F0FA30070F5B8 /* Windwound.html */; };
 		4A1405A7253F1BBE0070F5B8 /* ProcessLaunchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1405A4253F1BBE0070F5B8 /* ProcessLaunchImageView.m */; };
 		4A1405A8253F1BBE0070F5B8 /* ProcessButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1405A5253F1BBE0070F5B8 /* ProcessButton.m */; };
+		4A1E814C2553D17F0075FC27 /* DongwangMyCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E814B2553D17F0075FC27 /* DongwangMyCenterTableViewCell.m */; };
+		4A1E81522553D2260075FC27 /* DongwangMyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E81512553D2260075FC27 /* DongwangMyHeaderView.m */; };
+		4A1E81592553DE2B0075FC27 /* DongwangMyPrizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E81582553DE2B0075FC27 /* DongwangMyPrizeViewController.m */; };
+		4A1E815F2553E00F0075FC27 /* DongwangMyPrizeViewSubController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E815E2553E00F0075FC27 /* DongwangMyPrizeViewSubController.m */; };
+		4A1E81852553E3530075FC27 /* DongwangMyPrizeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E81842553E3520075FC27 /* DongwangMyPrizeTableViewCell.m */; };
+		4A1E818C255417FC0075FC27 /* DongwangPropsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E818B255417FC0075FC27 /* DongwangPropsViewController.m */; };
+		4A1E8195255418D00075FC27 /* DongwangProTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E8194255418D00075FC27 /* DongwangProTableViewCell.m */; };
+		4A1E819C255420100075FC27 /* DongwangGradesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E819B255420100075FC27 /* DongwangGradesViewController.m */; };
+		4A1E81EF25542C7D0075FC27 /* DongwangGardesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E81EE25542C7D0075FC27 /* DongwangGardesCollectionViewCell.m */; };
 		4A329D42254AAD99006A5D8B /* DongwangLogoinViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A329D41254AAD99006A5D8B /* DongwangLogoinViewModel.m */; };
 		4A348EE72550FD3B00793D59 /* MytestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A348EE62550FD3B00793D59 /* MytestCollectionViewCell.m */; };
 		4A348EED2550FD9800793D59 /* MyTestImgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A348EEC2550FD9800793D59 /* MyTestImgModel.m */; };
@@ -110,6 +119,11 @@
 		4A640B6225411DF000C56DC4 /* DongwangCodeloginNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A640B6125411DF000C56DC4 /* DongwangCodeloginNextViewController.m */; };
 		4A640B692541342600C56DC4 /* DongwangBandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A640B682541342600C56DC4 /* DongwangBandingViewController.m */; };
 		4A640B722541396D00C56DC4 /* DongwangBangdingNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A640B712541396D00C56DC4 /* DongwangBangdingNextViewController.m */; };
+		4A82F91F255526D400F4BA08 /* DongwangMyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A82F91E255526D400F4BA08 /* DongwangMyInfoViewController.m */; };
+		4A82F928255529B600F4BA08 /* DongwangMyInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A82F927255529B600F4BA08 /* DongwangMyInfoTableViewCell.m */; };
+		4A82F9372555350600F4BA08 /* DongwangMyInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A82F9362555350600F4BA08 /* DongwangMyInfoHeaderView.m */; };
+		4A82F93D2555382100F4BA08 /* DongwangInfoMsgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A82F93C2555382100F4BA08 /* DongwangInfoMsgView.m */; };
+		4A82F94425553D0A00F4BA08 /* DongwanguserHeaderImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A82F94325553D0A00F4BA08 /* DongwanguserHeaderImgView.m */; };
 		4A83BD5D2549593100F52C83 /* NSString+SYCM_DES.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A83BD5C2549593100F52C83 /* NSString+SYCM_DES.m */; };
 		4A8E9533254BA35000D42FC3 /* DongwangAdpageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E9532254BA35000D42FC3 /* DongwangAdpageModel.m */; };
 		4A8FA74C254FDDEA00A8AADA /* UIButton+HZXTouchuArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FA74B254FDDEA00A8AADA /* UIButton+HZXTouchuArea.m */; };
@@ -124,6 +138,8 @@
 		4AAE47C025483D8600436EE2 /* EncryptionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAE47BE25483D8600436EE2 /* EncryptionTool.m */; };
 		4AAE47CD25483DCB00436EE2 /* JKEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAE47C825483DCB00436EE2 /* JKEncrypt.m */; };
 		4AAE47CE25483DCB00436EE2 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAE47CC25483DCB00436EE2 /* GTMBase64.m */; };
+		4AC16A1425554998004AC829 /* DongwanguserHeaderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC16A1325554998004AC829 /* DongwanguserHeaderCollectionViewCell.m */; };
+		4AC16A1B25555343004AC829 /* DongwangSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC16A1A25555343004AC829 /* DongwangSettingViewController.m */; };
 		4AEC3A20254A5F3C001C78A0 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEC3A1F254A5F3C001C78A0 /* UserManager.m */; };
 /* End PBXBuildFile section */
 
@@ -247,6 +263,24 @@
 		4A1405A4253F1BBE0070F5B8 /* ProcessLaunchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessLaunchImageView.m; sourceTree = "<group>"; };
 		4A1405A5253F1BBE0070F5B8 /* ProcessButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessButton.m; sourceTree = "<group>"; };
 		4A1405A6253F1BBE0070F5B8 /* ProcessLaunchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessLaunchImageView.h; sourceTree = "<group>"; };
+		4A1E814A2553D17F0075FC27 /* DongwangMyCenterTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangMyCenterTableViewCell.h; sourceTree = "<group>"; };
+		4A1E814B2553D17F0075FC27 /* DongwangMyCenterTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangMyCenterTableViewCell.m; sourceTree = "<group>"; };
+		4A1E81502553D2260075FC27 /* DongwangMyHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangMyHeaderView.h; sourceTree = "<group>"; };
+		4A1E81512553D2260075FC27 /* DongwangMyHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangMyHeaderView.m; sourceTree = "<group>"; };
+		4A1E81572553DE2B0075FC27 /* DongwangMyPrizeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangMyPrizeViewController.h; sourceTree = "<group>"; };
+		4A1E81582553DE2B0075FC27 /* DongwangMyPrizeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangMyPrizeViewController.m; sourceTree = "<group>"; };
+		4A1E815D2553E00F0075FC27 /* DongwangMyPrizeViewSubController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangMyPrizeViewSubController.h; sourceTree = "<group>"; };
+		4A1E815E2553E00F0075FC27 /* DongwangMyPrizeViewSubController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangMyPrizeViewSubController.m; sourceTree = "<group>"; };
+		4A1E81832553E3520075FC27 /* DongwangMyPrizeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangMyPrizeTableViewCell.h; sourceTree = "<group>"; };
+		4A1E81842553E3520075FC27 /* DongwangMyPrizeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangMyPrizeTableViewCell.m; sourceTree = "<group>"; };
+		4A1E818A255417FC0075FC27 /* DongwangPropsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangPropsViewController.h; sourceTree = "<group>"; };
+		4A1E818B255417FC0075FC27 /* DongwangPropsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangPropsViewController.m; sourceTree = "<group>"; };
+		4A1E8193255418D00075FC27 /* DongwangProTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangProTableViewCell.h; sourceTree = "<group>"; };
+		4A1E8194255418D00075FC27 /* DongwangProTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangProTableViewCell.m; sourceTree = "<group>"; };
+		4A1E819A255420100075FC27 /* DongwangGradesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangGradesViewController.h; sourceTree = "<group>"; };
+		4A1E819B255420100075FC27 /* DongwangGradesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangGradesViewController.m; sourceTree = "<group>"; };
+		4A1E81ED25542C7D0075FC27 /* DongwangGardesCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangGardesCollectionViewCell.h; sourceTree = "<group>"; };
+		4A1E81EE25542C7D0075FC27 /* DongwangGardesCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangGardesCollectionViewCell.m; sourceTree = "<group>"; };
 		4A329D40254AAD99006A5D8B /* DongwangLogoinViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangLogoinViewModel.h; sourceTree = "<group>"; };
 		4A329D41254AAD99006A5D8B /* DongwangLogoinViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangLogoinViewModel.m; sourceTree = "<group>"; };
 		4A348EE52550FD3B00793D59 /* MytestCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MytestCollectionViewCell.h; sourceTree = "<group>"; };
@@ -352,6 +386,16 @@
 		4A640B682541342600C56DC4 /* DongwangBandingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangBandingViewController.m; sourceTree = "<group>"; };
 		4A640B702541396D00C56DC4 /* DongwangBangdingNextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangBangdingNextViewController.h; sourceTree = "<group>"; };
 		4A640B712541396D00C56DC4 /* DongwangBangdingNextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangBangdingNextViewController.m; sourceTree = "<group>"; };
+		4A82F91D255526D400F4BA08 /* DongwangMyInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangMyInfoViewController.h; sourceTree = "<group>"; };
+		4A82F91E255526D400F4BA08 /* DongwangMyInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangMyInfoViewController.m; sourceTree = "<group>"; };
+		4A82F926255529B600F4BA08 /* DongwangMyInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangMyInfoTableViewCell.h; sourceTree = "<group>"; };
+		4A82F927255529B600F4BA08 /* DongwangMyInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangMyInfoTableViewCell.m; sourceTree = "<group>"; };
+		4A82F9352555350600F4BA08 /* DongwangMyInfoHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangMyInfoHeaderView.h; sourceTree = "<group>"; };
+		4A82F9362555350600F4BA08 /* DongwangMyInfoHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangMyInfoHeaderView.m; sourceTree = "<group>"; };
+		4A82F93B2555382100F4BA08 /* DongwangInfoMsgView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangInfoMsgView.h; sourceTree = "<group>"; };
+		4A82F93C2555382100F4BA08 /* DongwangInfoMsgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangInfoMsgView.m; sourceTree = "<group>"; };
+		4A82F94225553D0A00F4BA08 /* DongwanguserHeaderImgView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwanguserHeaderImgView.h; sourceTree = "<group>"; };
+		4A82F94325553D0A00F4BA08 /* DongwanguserHeaderImgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwanguserHeaderImgView.m; sourceTree = "<group>"; };
 		4A83BD5B2549593100F52C83 /* NSString+SYCM_DES.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SYCM_DES.h"; sourceTree = "<group>"; };
 		4A83BD5C2549593100F52C83 /* NSString+SYCM_DES.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+SYCM_DES.m"; sourceTree = "<group>"; };
 		4A8E9531254BA35000D42FC3 /* DongwangAdpageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangAdpageModel.h; sourceTree = "<group>"; };
@@ -382,6 +426,10 @@
 		4AAE47CA25483DCB00436EE2 /* JKEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKEncrypt.h; sourceTree = "<group>"; };
 		4AAE47CB25483DCB00436EE2 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		4AAE47CC25483DCB00436EE2 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		4AC16A1225554998004AC829 /* DongwanguserHeaderCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwanguserHeaderCollectionViewCell.h; sourceTree = "<group>"; };
+		4AC16A1325554998004AC829 /* DongwanguserHeaderCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwanguserHeaderCollectionViewCell.m; sourceTree = "<group>"; };
+		4AC16A1925555343004AC829 /* DongwangSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangSettingViewController.h; sourceTree = "<group>"; };
+		4AC16A1A25555343004AC829 /* DongwangSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangSettingViewController.m; sourceTree = "<group>"; };
 		4AEC3A1E254A5F3C001C78A0 /* UserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		4AEC3A1F254A5F3C001C78A0 /* UserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		FA2CE25F301250D1DB90D103 /* Pods_DongWang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DongWang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -725,6 +773,41 @@
 			path = ProcessLaunchView;
 			sourceTree = "<group>";
 		};
+		4A1E81562553DDEB0075FC27 /* 奖品 */ = {
+			isa = PBXGroup;
+			children = (
+				4A1E81572553DE2B0075FC27 /* DongwangMyPrizeViewController.h */,
+				4A1E81582553DE2B0075FC27 /* DongwangMyPrizeViewController.m */,
+				4A1E815D2553E00F0075FC27 /* DongwangMyPrizeViewSubController.h */,
+				4A1E815E2553E00F0075FC27 /* DongwangMyPrizeViewSubController.m */,
+				4A1E81832553E3520075FC27 /* DongwangMyPrizeTableViewCell.h */,
+				4A1E81842553E3520075FC27 /* DongwangMyPrizeTableViewCell.m */,
+			);
+			path = "奖品";
+			sourceTree = "<group>";
+		};
+		4A1E8189255417D00075FC27 /* 道具 */ = {
+			isa = PBXGroup;
+			children = (
+				4A1E818A255417FC0075FC27 /* DongwangPropsViewController.h */,
+				4A1E818B255417FC0075FC27 /* DongwangPropsViewController.m */,
+				4A1E8193255418D00075FC27 /* DongwangProTableViewCell.h */,
+				4A1E8194255418D00075FC27 /* DongwangProTableViewCell.m */,
+			);
+			path = "道具";
+			sourceTree = "<group>";
+		};
+		4A1E819925541FF60075FC27 /* 成绩 */ = {
+			isa = PBXGroup;
+			children = (
+				4A1E819A255420100075FC27 /* DongwangGradesViewController.h */,
+				4A1E819B255420100075FC27 /* DongwangGradesViewController.m */,
+				4A1E81ED25542C7D0075FC27 /* DongwangGardesCollectionViewCell.h */,
+				4A1E81EE25542C7D0075FC27 /* DongwangGardesCollectionViewCell.m */,
+			);
+			path = "成绩";
+			sourceTree = "<group>";
+		};
 		4A48CD6C25491BF700BE84F2 /* 活动页 */ = {
 			isa = PBXGroup;
 			children = (
@@ -902,6 +985,25 @@
 			path = "绑定手机号";
 			sourceTree = "<group>";
 		};
+		4A82F91C2555266E00F4BA08 /* 个人资料 */ = {
+			isa = PBXGroup;
+			children = (
+				4A82F91D255526D400F4BA08 /* DongwangMyInfoViewController.h */,
+				4A82F91E255526D400F4BA08 /* DongwangMyInfoViewController.m */,
+				4A82F926255529B600F4BA08 /* DongwangMyInfoTableViewCell.h */,
+				4A82F927255529B600F4BA08 /* DongwangMyInfoTableViewCell.m */,
+				4A82F9352555350600F4BA08 /* DongwangMyInfoHeaderView.h */,
+				4A82F9362555350600F4BA08 /* DongwangMyInfoHeaderView.m */,
+				4A82F93B2555382100F4BA08 /* DongwangInfoMsgView.h */,
+				4A82F93C2555382100F4BA08 /* DongwangInfoMsgView.m */,
+				4A82F94225553D0A00F4BA08 /* DongwanguserHeaderImgView.h */,
+				4A82F94325553D0A00F4BA08 /* DongwanguserHeaderImgView.m */,
+				4AC16A1225554998004AC829 /* DongwanguserHeaderCollectionViewCell.h */,
+				4AC16A1325554998004AC829 /* DongwanguserHeaderCollectionViewCell.m */,
+			);
+			path = "个人资料";
+			sourceTree = "<group>";
+		};
 		4A83BD5A254958AD00F52C83 /* DES加密 */ = {
 			isa = PBXGroup;
 			children = (
@@ -932,8 +1034,17 @@
 		4A97CC3E2546A92400FCE2E9 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				4AC16A1825555336004AC829 /* 设置 */,
+				4A82F91C2555266E00F4BA08 /* 个人资料 */,
+				4A1E819925541FF60075FC27 /* 成绩 */,
+				4A1E8189255417D00075FC27 /* 道具 */,
+				4A1E81562553DDEB0075FC27 /* 奖品 */,
 				4AAE47A52548381C00436EE2 /* DongFangMyCenterViewController.h */,
 				4AAE47A62548381C00436EE2 /* DongFangMyCenterViewController.m */,
+				4A1E814A2553D17F0075FC27 /* DongwangMyCenterTableViewCell.h */,
+				4A1E814B2553D17F0075FC27 /* DongwangMyCenterTableViewCell.m */,
+				4A1E81502553D2260075FC27 /* DongwangMyHeaderView.h */,
+				4A1E81512553D2260075FC27 /* DongwangMyHeaderView.m */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -968,6 +1079,15 @@
 				4AAE47CC25483DCB00436EE2 /* GTMBase64.m */,
 			);
 			path = 3DES;
+			sourceTree = "<group>";
+		};
+		4AC16A1825555336004AC829 /* 设置 */ = {
+			isa = PBXGroup;
+			children = (
+				4AC16A1925555343004AC829 /* DongwangSettingViewController.h */,
+				4AC16A1A25555343004AC829 /* DongwangSettingViewController.m */,
+			);
+			path = "设置";
 			sourceTree = "<group>";
 		};
 		8CF0E775C6D776BEB2A49923 /* Frameworks */ = {
@@ -1192,6 +1312,7 @@
 				4A140492253ECBBE0070F5B8 /* UIColor+CHRegex.m in Sources */,
 				4A140523253ED1880070F5B8 /* StartPageCell.m in Sources */,
 				4A54CF512547DE94009CE6CC /* EasyShowUtils.m in Sources */,
+				4A1E8195255418D00075FC27 /* DongwangProTableViewCell.m in Sources */,
 				4A1402C6253E7EAE0070F5B8 /* ViewController.m in Sources */,
 				4A1402C0253E7EAE0070F5B8 /* AppDelegate.m in Sources */,
 				4A640B6225411DF000C56DC4 /* DongwangCodeloginNextViewController.m in Sources */,
@@ -1213,6 +1334,7 @@
 				4A14049B253ECD500070F5B8 /* CHImageView.m in Sources */,
 				4A140493253ECBBE0070F5B8 /* UITextView+CHPlaceHolder.m in Sources */,
 				4A14048E253ECBBE0070F5B8 /* NSString+CHRegex.m in Sources */,
+				4A82F93D2555382100F4BA08 /* DongwangInfoMsgView.m in Sources */,
 				4A54CF4E2547DE94009CE6CC /* EasyTextBgView.m in Sources */,
 				4A140494253ECBBE0070F5B8 /* UIView+CHFrame.m in Sources */,
 				4A140542253EE87A0070F5B8 /* DongwangQidonyeViewController.m in Sources */,
@@ -1221,10 +1343,14 @@
 				4A348FA5255130B300793D59 /* textcollection.m in Sources */,
 				4A1403CD253E885F0070F5B8 /* DongwangBaseTabBarViewController.m in Sources */,
 				4A54CF522547DE94009CE6CC /* EasyShowLabel.m in Sources */,
+				4A82F9372555350600F4BA08 /* DongwangMyInfoHeaderView.m in Sources */,
+				4A1E815F2553E00F0075FC27 /* DongwangMyPrizeViewSubController.m in Sources */,
 				4A54CF222547B354009CE6CC /* YYTextUtilities.m in Sources */,
 				4A1405A8253F1BBE0070F5B8 /* ProcessButton.m in Sources */,
 				4A1403AC253E87A40070F5B8 /* UIViewController+IOS13.m in Sources */,
 				4AAE47B525483B7D00436EE2 /* AFNetworkTool.m in Sources */,
+				4A1E818C255417FC0075FC27 /* DongwangPropsViewController.m in Sources */,
+				4A82F928255529B600F4BA08 /* DongwangMyInfoTableViewCell.m in Sources */,
 				4A140490253ECBBE0070F5B8 /* NSArray+CHRegex.m in Sources */,
 				4A54CF192547B354009CE6CC /* YYTextSelectionView.m in Sources */,
 				4A54CF4D2547DE94009CE6CC /* EasyTextGlobalConfig.m in Sources */,
@@ -1233,7 +1359,9 @@
 				4A329D42254AAD99006A5D8B /* DongwangLogoinViewModel.m in Sources */,
 				4A54CF152547B354009CE6CC /* YYTextEffectWindow.m in Sources */,
 				4A48CD6F25491C1B00BE84F2 /* DongwangActityViewController.m in Sources */,
+				4A82F94425553D0A00F4BA08 /* DongwanguserHeaderImgView.m in Sources */,
 				4A54CF1B2547B354009CE6CC /* YYTextDebugOption.m in Sources */,
+				4A82F91F255526D400F4BA08 /* DongwangMyInfoViewController.m in Sources */,
 				4AAE47BF25483D8600436EE2 /* RSA.m in Sources */,
 				4A140525253ED1880070F5B8 /* StratViewController.m in Sources */,
 				4A54CF252547B354009CE6CC /* UIPasteboard+YYText.m in Sources */,
@@ -1246,6 +1374,7 @@
 				4A13B988253FDF2200753C4D /* DongwangCodeLoginViewController.m in Sources */,
 				4A140346253E86780070F5B8 /* SSDeviceDefault.m in Sources */,
 				4A54CF242547B354009CE6CC /* NSAttributedString+YYText.m in Sources */,
+				4AC16A1B25555343004AC829 /* DongwangSettingViewController.m in Sources */,
 				4A13B98E253FDF2D00753C4D /* DongwangCLLoginViewController.m in Sources */,
 				4AEC3A20254A5F3C001C78A0 /* UserManager.m in Sources */,
 				4AAE479B2548380500436EE2 /* DongwangFenleiViewController.m in Sources */,
@@ -1260,6 +1389,7 @@
 				4A54CF562547DE94009CE6CC /* EasyLodingConfig.m in Sources */,
 				4A1403B2253E87C10070F5B8 /* NSString+StringSize.m in Sources */,
 				4A54CF4F2547DE94009CE6CC /* EasyTextTypes.m in Sources */,
+				4AC16A1425554998004AC829 /* DongwanguserHeaderCollectionViewCell.m in Sources */,
 				4AAE47A12548381400436EE2 /* DongwangFindViewController.m in Sources */,
 				4A54CF1F2547B354009CE6CC /* YYTextAttribute.m in Sources */,
 				4A640B692541342600C56DC4 /* DongwangBandingViewController.m in Sources */,
@@ -1268,24 +1398,30 @@
 				4A54CF572547DE94009CE6CC /* EasyLodingGlobalConfig.m in Sources */,
 				4A54CF142547B354009CE6CC /* YYTextContainerView.m in Sources */,
 				4A54CFE42547E205009CE6CC /* ZASTextFieldFormat.m in Sources */,
+				4A1E81852553E3530075FC27 /* DongwangMyPrizeTableViewCell.m in Sources */,
 				4A54CF4C2547DE94009CE6CC /* EasyTextView.m in Sources */,
 				4AAE47CE25483DCB00436EE2 /* GTMBase64.m in Sources */,
 				4A1403C7253E880B0070F5B8 /* UIView+ACSLayer.m in Sources */,
 				4A140491253ECBBE0070F5B8 /* UIButton+CHRegex.m in Sources */,
+				4A1E81EF25542C7D0075FC27 /* DongwangGardesCollectionViewCell.m in Sources */,
 				4A48CD622548FE6200BE84F2 /* DongwangAdpageWebViewController.m in Sources */,
 				4A48CD7925491E7800BE84F2 /* CoreAnimationEffect.m in Sources */,
 				4A54CF1C2547B354009CE6CC /* YYLabel.m in Sources */,
 				4A54CF1E2547B354009CE6CC /* YYTextParser.m in Sources */,
 				4A14048C253ECBBE0070F5B8 /* UITableView+AddForPlaceholder.m in Sources */,
 				4A14044A253EBC140070F5B8 /* UIImage+LaunchImgNameSize.m in Sources */,
+				4A1E81522553D2260075FC27 /* DongwangMyHeaderView.m in Sources */,
 				4A140441253EB4640070F5B8 /* DongwangHomeViewController.m in Sources */,
 				4A54CF502547DE94009CE6CC /* CHShowMessageHud.m in Sources */,
+				4A1E81592553DE2B0075FC27 /* DongwangMyPrizeViewController.m in Sources */,
 				4A140524253ED1880070F5B8 /* StratPageView.m in Sources */,
 				4A54CF162547B354009CE6CC /* YYTextInput.m in Sources */,
 				4A54CF4B2547DE94009CE6CC /* EasyTextConfig.m in Sources */,
+				4A1E814C2553D17F0075FC27 /* DongwangMyCenterTableViewCell.m in Sources */,
 				4A54CF1D2547B354009CE6CC /* YYTextRunDelegate.m in Sources */,
 				4A1403B8253E87CB0070F5B8 /* UIColor+ColorChange.m in Sources */,
 				4A8FA74C254FDDEA00A8AADA /* UIButton+HZXTouchuArea.m in Sources */,
+				4A1E819C255420100075FC27 /* DongwangGradesViewController.m in Sources */,
 				4A140343253E86780070F5B8 /* UIView+shadowPath.m in Sources */,
 				4A1403D9253E889A0070F5B8 /* DongwangBaseViewController.m in Sources */,
 				4A54CFEB2547E614009CE6CC /* JITelephoneInputTextField.m in Sources */,

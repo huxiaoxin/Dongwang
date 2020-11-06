@@ -154,23 +154,26 @@
 #pragma mark--获取验证码
 -(void)DongwangCodeBtnClick{
     MJWeakSelf;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.timer = [RITLTimer scheduledTimerWithTimeInterval:1 userInfo:nil repeats:YES BlockHandle:^(id  _Nonnull info) {
-            weakSelf.Count --;
-            if (weakSelf.Count == 0) {
-                [weakSelf.timer invalidate];
-                weakSelf.timer = nil;
-                weakSelf.Count = 60;
-                weakSelf.DongwangCodeBtn.enabled = YES;
-                [weakSelf.DongwangCodeBtn setTitle:@"重新获取" forState:UIControlStateNormal];
-            }else{
-                weakSelf.DongwangCodeBtn.enabled = NO;
-                [weakSelf.DongwangCodeBtn setTitle:[NSString stringWithFormat:@"重新获取(%lds)",weakSelf.Count] forState:UIControlStateNormal];
-            }
-        }];
+    //获取验证码
+    [DongwangLogoinViewModel CodeloginRequestWithParmtersw:@{@"phone":self.phoneText}.mutableCopy RequestCuurentControlers:self logoinSuuced:^{
+        weakSelf.Count --;
+        if (weakSelf.Count == 0) {
+            [weakSelf.timer invalidate];
+            weakSelf.timer = nil;
+            weakSelf.Count = 60;
+            weakSelf.DongwangCodeBtn.enabled = YES;
+            [weakSelf.DongwangCodeBtn setTitle:@"重新获取" forState:UIControlStateNormal];
+        }else{
+            weakSelf.DongwangCodeBtn.enabled = NO;
+            [weakSelf.DongwangCodeBtn setTitle:[NSString stringWithFormat:@"重新获取(%lds)",weakSelf.Count] forState:UIControlStateNormal];
+        }
         
+    } logoinfairler:^{
         
-    });
+    }];
+    
+    
+    
 }
 -(void)textFieldEditingChanged:(UITextField *)DongwangTextField{
     if (_DongwangPhoneTextField.text.length ==6) {

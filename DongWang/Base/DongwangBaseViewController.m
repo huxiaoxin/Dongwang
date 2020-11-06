@@ -17,6 +17,9 @@
     [super viewDidLoad];
     self.gk_navLineHidden = YES;
     self.view.backgroundColor = [UIColor whiteColor];
+    // 标题栏
+    
+    self.gk_navBackgroundImage = [UIImage imageNamed:@"标题栏"];
     
     // Do any additional setup after loading the view.
 }
