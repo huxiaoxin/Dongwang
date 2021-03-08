@@ -112,6 +112,7 @@
 		4A14059B253F0FA30070F5B8 /* Windwound.html in Resources */ = {isa = PBXBuildFile; fileRef = 4A14059A253F0FA30070F5B8 /* Windwound.html */; };
 		4A1405A7253F1BBE0070F5B8 /* ProcessLaunchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1405A4253F1BBE0070F5B8 /* ProcessLaunchImageView.m */; };
 		4A1405A8253F1BBE0070F5B8 /* ProcessButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1405A5253F1BBE0070F5B8 /* ProcessButton.m */; };
+		4A150E5225F5C100004F2367 /* DongwangTieziBianJiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A150E5125F5C100004F2367 /* DongwangTieziBianJiView.m */; };
 		4A1B20DB25885C0C00AF4282 /* userActionModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1B20DA25885C0C00AF4282 /* userActionModels.m */; };
 		4A1B20E22588848200AF4282 /* DongwangHommetuijianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1B20E12588848200AF4282 /* DongwangHommetuijianViewController.m */; };
 		4A1B20E8258885B900AF4282 /* DongwangHomeTuijianSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1B20E7258885B900AF4282 /* DongwangHomeTuijianSectionHeaderView.m */; };
@@ -647,6 +648,8 @@
 		4A1405A4253F1BBE0070F5B8 /* ProcessLaunchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessLaunchImageView.m; sourceTree = "<group>"; };
 		4A1405A5253F1BBE0070F5B8 /* ProcessButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessButton.m; sourceTree = "<group>"; };
 		4A1405A6253F1BBE0070F5B8 /* ProcessLaunchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessLaunchImageView.h; sourceTree = "<group>"; };
+		4A150E5025F5C100004F2367 /* DongwangTieziBianJiView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangTieziBianJiView.h; sourceTree = "<group>"; };
+		4A150E5125F5C100004F2367 /* DongwangTieziBianJiView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangTieziBianJiView.m; sourceTree = "<group>"; };
 		4A1B20D925885C0C00AF4282 /* userActionModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = userActionModels.h; sourceTree = "<group>"; };
 		4A1B20DA25885C0C00AF4282 /* userActionModels.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = userActionModels.m; sourceTree = "<group>"; };
 		4A1B20E02588848200AF4282 /* DongwangHommetuijianViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangHommetuijianViewController.h; sourceTree = "<group>"; };
@@ -1822,6 +1825,15 @@
 			path = ProcessLaunchView;
 			sourceTree = "<group>";
 		};
+		4A150E4D25F5C0D7004F2367 /* 帖子编辑view */ = {
+			isa = PBXGroup;
+			children = (
+				4A150E5025F5C100004F2367 /* DongwangTieziBianJiView.h */,
+				4A150E5125F5C100004F2367 /* DongwangTieziBianJiView.m */,
+			);
+			path = "帖子编辑view";
+			sourceTree = "<group>";
+		};
 		4A1B20DF2588845C00AF4282 /* 推荐页面 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2651,6 +2663,7 @@
 		4AE481B225B1B25000CE3836 /* MyChatList */ = {
 			isa = PBXGroup;
 			children = (
+				4A150E4D25F5C0D7004F2367 /* 帖子编辑view */,
 				1F443EDD25F21FDC00A1C450 /* 创建圈子 */,
 				1F443EC625F20DE900A1C450 /* 我的圈子 */,
 				1F3C04AE25F1E28D00591505 /* 发话题 */,
@@ -3213,6 +3226,7 @@
 				4AE481B525B1B26A00CE3836 /* DongwangMyChatListViewController.m in Sources */,
 				4A1B20E8258885B900AF4282 /* DongwangHomeTuijianSectionHeaderView.m in Sources */,
 				4AB505AA25637A82009988B2 /* TreeView.m in Sources */,
+				4A150E5225F5C100004F2367 /* DongwangTieziBianJiView.m in Sources */,
 				4AC354B4256BCF7C000F95A9 /* DongwangDaojuModel.m in Sources */,
 				4A022317256E6BE900AAFE82 /* DongwangHotTizuViewController.m in Sources */,
 				4A329D42254AAD99006A5D8B /* DongwangLogoinViewModel.m in Sources */,

@@ -9,10 +9,12 @@
 #import "DongwangMychatDetailTableViewCell.h"
 #import "DongwangMyChatSendToolView.h"
 #import "DongwangMyChtaDetailHeaderView.h"
-@interface DongwangMyChatDetailViewController ()<UITableViewDataSource,UITableViewDelegate,DongwangMyChatSendToolViewDelegate>
+#import "DongwangTieziBianJiView.h"
+@interface DongwangMyChatDetailViewController ()<UITableViewDataSource,UITableViewDelegate,DongwangMyChatSendToolViewDelegate,DongwangTieziBianJiViewDelegate>
 @property(nonatomic,strong) UITableView * DongwangMyChatTableView;
 @property(nonatomic,strong) DongwangMyChtaDetailHeaderView * DetailHeader;
 @property(nonatomic,strong) DongwangMyChatSendToolView * topView;
+@property(nonatomic,strong) DongwangTieziBianJiView * bianjiView;
 @end
 
 @implementation DongwangMyChatDetailViewController
@@ -26,7 +28,28 @@
     _DongwangMyChatTableView.tableHeaderView = self.DetailHeader;
     [self.view addSubview:self.topView];
     _topView.height = self.topView.ToolViewHeight;
+    
+    
+    self.gk_navItemRightSpace = RealWidth(15);
+    UIButton * rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightBtn setImage:[UIImage imageNamed:@"gengduo"] forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(rightBtnClicks) forControlEvents:UIControlEventTouchUpInside];
+    self.gk_navRightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
 
+}
+-(void)rightBtnClicks{
+    [self.bianjiView ShowView];
+}
+-(DongwangTieziBianJiView *)bianjiView{
+    if (!_bianjiView) {
+    _bianjiView = [[DongwangTieziBianJiView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        _bianjiView.delegate = self;
+    }
+    return _bianjiView;
+}
+#pragma mark--DongwangTieziBianJiViewDelegate
+-(void)DongwangTieziBianJiViewhiden{
+[_bianjiView removeFromSuperview];
 }
 #pragma mark--DongwangMyChatSendToolViewDelegate
 -(void)DongwangMyChatSendToolViewUpdateFrame{
@@ -48,7 +71,7 @@
 }
 -(UITableView *)DongwangMyChatTableView{
     if (!_DongwangMyChatTableView) {
-        _DongwangMyChatTableView = [[UITableView alloc]initWithFrame:CGRectMake(RealWidth(15), NaviH, SCREEN_WIDTH-RealWidth(30), SCREEN_HEIGHT-NaviH-SafeAreaBottom_Height-RealWidth(60)) style:UITableViewStylePlain];
+        _DongwangMyChatTableView = [[UITableView alloc]initWithFrame:CGRectMake(RealWidth(15), NaviH+RealWidth(10), SCREEN_WIDTH-RealWidth(30), SCREEN_HEIGHT-NaviH-SafeAreaBottom_Height-RealWidth(60+10)) style:UITableViewStylePlain];
         _DongwangMyChatTableView.layer.cornerRadius = RealWidth(5);
         _DongwangMyChatTableView.layer.masksToBounds = YES;
         _DongwangMyChatTableView.backgroundColor = [UIColor colorWithHexString:@"#453593"];
