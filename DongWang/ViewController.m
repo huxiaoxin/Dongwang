@@ -8,6 +8,7 @@
 #import "ViewController.h"
 #import "MytestCollectionViewCell.h"
 #import "MyTestImgModel.h"
+#import "MyTestView.h"
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong) UICollectionView * MyCollectionView;
 @property(nonatomic,strong) NSMutableArray * MyDataArr;
@@ -65,8 +66,19 @@
 //        imgmodel6.width = SCREEN_WIDTH/2;
 //        [_MyDataArr addObject:imgmodel6];
 //        _MyDataArr = [[NSMutableArray alloc]init];
-        [_MyDataArr addObject:@{@"w":@"204.5",@"g":@"30"}];
-        [_MyDataArr addObject:@{@"w":@"204.5",@"g":@"30"}];
+//        [_MyDataArr addObject:@{@"w":@"204.5",@"g":@"30"}];
+//        [_MyDataArr addObject:@{@"w":@"204.5",@"g":@"30"}];
+//        [_MyDataArr addObject:@{@"w":@"99.75",@"g":@"30"}];
+//        [_MyDataArr addObject:@{@"w":@"99.75",@"g":@"30"}];
+//        [_MyDataArr addObject:@{@"w":@"99.75",@"g":@"30"}];
+//        [_MyDataArr addObject:@{@"w":@"99.75",@"g":@"30"}];
+//        [_MyDataArr addObject:@{@"w":@"134.6",@"g":@"30"}];
+//        [_MyDataArr addObject:@{@"w":@"134.6",@"g":@"30"}];
+//        [_MyDataArr addObject:@{@"w":@"134.6",@"g":@"30"}];
+//        [_MyDataArr addObject:@{@"w":@"414",@"g":@"30"}];
+
+        [_MyDataArr addObject:@{@"w":@"500",@"g":@"500"}];
+        [_MyDataArr addObject:@{@"w":@"500",@"g":@"500"}];
         [_MyDataArr addObject:@{@"w":@"99.75",@"g":@"30"}];
         [_MyDataArr addObject:@{@"w":@"99.75",@"g":@"30"}];
         [_MyDataArr addObject:@{@"w":@"99.75",@"g":@"30"}];
@@ -75,7 +87,6 @@
         [_MyDataArr addObject:@{@"w":@"134.6",@"g":@"30"}];
         [_MyDataArr addObject:@{@"w":@"134.6",@"g":@"30"}];
         [_MyDataArr addObject:@{@"w":@"414",@"g":@"30"}];
-
 
         
     }
@@ -86,6 +97,26 @@
     [self.view addSubview:self.MyCollectionView];
     [self.MyCollectionView reloadData];
     // Do any additional setup after loading the view.
+    
+//    MyTestView * testView = [[MyTestView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH)];
+//    testView.backgroundColor = LGDMianColor;
+//    [self.view addSubview:testView];
+    
+    
+//    UIView  * view1  = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+//    view1.backgroundColor = LGDRedColor;
+//    [self.view addSubview:view1];
+//    
+//    UIView  * view2  = [[UIView alloc]initWithFrame:CGRectMake(100, 250, 100, 100)];
+//    view2.backgroundColor = LGDBlueColor;
+//    [self.view addSubview:view2];
+//    
+//    if (CGRectIntersectsRect(view2.frame, view1.frame)) {
+//        NSLog(@"交集");
+//    }
+    
+    
+    
 }
 -(UICollectionView *)MyCollectionView{
     if (!_MyCollectionView) {

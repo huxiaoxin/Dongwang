@@ -10,7 +10,9 @@
 
 @implementation UITextField (AddPlaceholder)
 
-- (void)addPlaceholders:(UIFont *)placeFont {
+- (void)addPlaceholders:(UIFont *)placeFont holderStr:(NSString *)str holderColor:(UIColor *)color{ // 占位符的字体大小
+    self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:str attributes:@{NSFontAttributeName:placeFont,NSForegroundColorAttributeName:color}];
+
     /*
     // iOS13 使用这个kvc方法会产生奔溃, 关闭使用
     或者使用这个方法也可以, 以后再有这个需求可以加上

@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DongwangMyInfoTableViewCell : UITableViewCell
+
 -(void)DongwangMyInfoTableViewCellConfigerData:(NSMutableArray *)leftData RightData:(NSMutableArray *)rightData indexPath:(NSIndexPath *)indexPath;
 @end
 

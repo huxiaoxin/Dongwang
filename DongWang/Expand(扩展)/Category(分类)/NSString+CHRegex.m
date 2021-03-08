@@ -54,6 +54,25 @@
     }
     return phone;
 }
++(NSString *)replaceStringWithAsterisk:(NSString *)originalStr startLocation:(NSInteger)startLocation lenght:(NSInteger)lenght
+
+{
+
+    NSString *newStr = originalStr;
+
+    for (int i = 0; i < lenght; i++) {
+
+        NSRange range = NSMakeRange(startLocation, 1);
+
+        newStr = [newStr stringByReplacingCharactersInRange:range withString:@"*"];
+
+        startLocation ++;
+
+    }
+
+    return newStr;
+
+}
 
 /* 车牌号验证 MODIFIED BY HELENSONG */
 - (BOOL)isValidCarNo
@@ -236,6 +255,7 @@
 - (NSString *)stringByTrimmingBlank
 {
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
 }
 - (NSString *)stringReplacing {
     return [self stringByReplacingOccurrencesOfString:@" " withString:@""];

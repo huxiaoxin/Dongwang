@@ -1,19 +1,34 @@
 {
   "images" : [
     {
-      "filename" : "编组 3.png",
-      "idiom" : "universal",
-      "scale" : "1x"
+      "filename" : "编组 3@2x-1.png",
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "subtype" : "736h"
     },
     {
       "filename" : "编组 3@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "subtype" : "667h"
     },
     {
-      "filename" : "编组 3@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "编组 3@2x-2.png",
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "subtype" : "2436h"
+    },
+    {
+      "filename" : "编组 3@2x-3.png",
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "subtype" : "2688h"
+    },
+    {
+      "filename" : "编组 3@2x-4.png",
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "subtype" : "1792h"
     }
   ],
   "info" : {

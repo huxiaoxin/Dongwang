@@ -20,7 +20,7 @@
     },
     {
       "extent" : "full-screen",
-      "filename" : "启动页1125.png",
+      "filename" : "启动页1125非刘海屏.png",
       "idiom" : "iphone",
       "minimum-system-version" : "11.0",
       "orientation" : "portrait",
@@ -38,7 +38,7 @@
     },
     {
       "extent" : "full-screen",
-      "filename" : "启动页750.png",
+      "filename" : "启动页750非刘海屏.png",
       "idiom" : "iphone",
       "minimum-system-version" : "8.0",
       "orientation" : "portrait",

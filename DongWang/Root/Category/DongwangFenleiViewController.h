@@ -8,9 +8,9 @@
 #import "DongwangBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
+static const CGFloat JXTableHeaderViewHeight = 232;
+static const CGFloat JXheightForHeaderInSection = 40;
 @interface DongwangFenleiViewController : DongwangBaseViewController
-
 @end
 
 NS_ASSUME_NONNULL_END

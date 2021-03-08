@@ -9,62 +9,56 @@
 #import <WebKit/WebKit.h>
 #import "DongwangTabbarModel.h"
 #import "DongwangBaseTabBarViewController.h"
+#import "DongwangCLLoginViewController.h"
+#import "DongwangCodeLoginViewController.h"
 @interface DongwangAdpageWebViewController ()<WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler>
 @property(nonatomic,strong) WKWebView * wkweb;
-@property(nonatomic,strong) UIButton * backBtn;
+@property(nonatomic,strong) CHButton * backBtn;
 @end
 
 @implementation DongwangAdpageWebViewController
--(UIButton *)backBtn{
+-(CHButton *)backBtn{
     if (!_backBtn) {
-        _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage * imgname = [UIImage imageNamed:@"btn_back_black"];
+        _backBtn = [[CHButton alloc]initWithFrame:CGRectMake(0, K(10), imgname.size.width, imgname.size.height)];
         [_backBtn addTarget:self action:@selector(ShuyunBackBtnClick) forControlEvents:UIControlEventTouchUpInside];
-        [_backBtn setImage:[UIImage imageNamed:@"btn_back_black"] forState:UIControlStateNormal];
+        [_backBtn setImage:imgname forState:UIControlStateNormal];
     }
     return _backBtn;
-}
--(void)tabarRequest{
-    NSDictionary *postHeader = [EncryptionTool getSignatureTimestamp];
-    NSString *url = [NSString stringWithFormat:@"%@/rest/home/tab", BASE_IPURL];
-    kWeakSelf(self);
-    [CHShowMessageHud showHUDPlainText:@"" view:self.view];
-    [AFNetworkTool GET:url HttpHeader:postHeader Parameters:nil Success:^(id responseObject) {
-        [CHShowMessageHud dismissHideHUD:self.view];
-        NSDictionary *dic = (NSDictionary *)responseObject;
-        NSLog(@"动态：%@",dic);
-        if ([dic[@"err"] isEqualToString:@"00000"]) {
-            NSDictionary *tempData = (NSDictionary *)dic[@"dat"];
-            DongwangTabbarModel * model = [DongwangTabbarModel BaseinitWithDic:tempData];
-            [weakself loadHomeTabbarWithTabbarModel:model];
-        } else {
-            [weakself loadHomeTabbarWithTabbarModel:nil];
-        }
-    } Failure:^(NSError *error) {
-        [CHShowMessageHud dismissHideHUD:self.view];
-        [weakself loadHomeTabbarWithTabbarModel:nil];
-    }];
-
-}
--(void)loadHomeTabbarWithTabbarModel:(DongwangTabbarModel *)tabbarModel{
-    DongwangBaseTabBarViewController * dongwangTabbarVc = [[DongwangBaseTabBarViewController alloc]init];
-    if (tabbarModel) {
-        dongwangTabbarVc.tabbarModel = tabbarModel;
-    }else{
-        dongwangTabbarVc.tabbarModel = [DongwangTabbarModel new];
-    }
-    [AppDelegate getAppDelegate].window.rootViewController = dongwangTabbarVc;
 }
 
 #pragma mark--返回
 -(void)ShuyunBackBtnClick{
-    [self tabarRequest];
+    if ([UserManager userisLogoin]) {
+        [self BaseTabarRequest];
+    }else{
+    NSString *shanyanLogin = [NSString stringWithFormat:@"%@", [NSUserDefaults ch_customObjectForKey:CHSYTagPhoneNumberBOOL]];
+    [self DongwangLogoinConfigerType:shanyanLogin];
+    }
 }
+-(void)DongwangLogoinConfigerType:(NSString * )type{
+    if ([type isEqualToString:@"1"]) {
+    //闪验登录
+     DongwangCLLoginViewController * DongwangClVc = [[DongwangCLLoginViewController alloc]init];
+    UINavigationController * DongwangclNav = [UINavigationController rootVC:DongwangClVc translationScale:YES];
+    [AppDelegate getAppDelegate].window.rootViewController = DongwangclNav;
+    }else {
+    //验证码登
+    DongwangCodeLoginViewController * DongwangLoginVc = [[DongwangCodeLoginViewController alloc]init];
+    UINavigationController * DongwangNav = [UINavigationController rootVC:DongwangLoginVc translationScale:YES];
+    [AppDelegate getAppDelegate].window.rootViewController = DongwangNav;
+    }
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor clearColor];
     self.gk_navTitle = @"加载中...";
-    self.gk_navLeftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.backBtn];
+    UIView * backViews = [[UIView alloc]initWithFrame:CGRectMake(0, 0, K(60), NaviH)];
+    [backViews addSubview:self.backBtn];
+    self.gk_navLeftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:backViews];
     self.gk_navItemLeftSpace =  K(20);
-
     [self.view addSubview:self.wkweb];
     NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",self.pageModel.url]];
     [_wkweb loadRequest:[NSURLRequest requestWithURL:url]];

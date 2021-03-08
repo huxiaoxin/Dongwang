@@ -11,90 +11,147 @@
 #import "DongwangHomeViewController.h"
 #import "DongwangFenleiViewController.h"
 #import "DongwangFindViewController.h"
+#import "DongwangHotTizuViewController.h"
 #import "DongFangMyCenterViewController.h"
 #import "DongwangActityViewController.h"
 #import "CoreAnimationEffect.h"
 #import "UIView+CHFrame.h"
+#import "DongwangPrivetaWebViewController.h"
+
+
+
+
+#import "DongwangHomeViewController_V2.h"
+#import "DongwangMallViewController.h"
+#import "DongwangFindViewController_V2.h"
+#import "DongwangHomeViewController_V3.h"
+#import "DongwangDaletouViewController.h"
+#import "DongwangMyChatListViewController.h"
+#import "DongwangyouleChangViewController.h"
+#import "DongwangHomeTuijianViewController_V3.h"
 @interface DongwangBaseTabBarViewController ()<UITabBarControllerDelegate>
 @property (nonatomic, strong)UITabBarItem *lastItem; // 标记上一次点击的TabBarItem
 @property (nonatomic, assign)BOOL lastBOOL;
+@property (strong, nonatomic) NSDate *lastDate;
+
 @end
 
 @implementation DongwangBaseTabBarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     self.delegate = self;
     CHTabBar *tabbar = [[CHTabBar alloc] init];
+    tabbar.translucent = NO;
+    tabbar.barTintColor = LGDTabarColor;
     [self setValue:tabbar forKeyPath:@"tabBar"];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#9F9FA0"]} forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:LGDMianColor} forState:UIControlStateNormal];
-//    [self.tabBar showBadgeOnItemIndex:3 AllItemIndex:5];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateSelected];
+    
+    
+
+    
     
 }
 -(void)setTabbarModel:(DongwangTabbarModel *)tabbarModel{
     _tabbarModel = tabbarModel;
-    //初始化标题数组, 未选择图片数组, 选择图片数组, 控制器数组
+    
+//    NSMutableArray *titleArr;
+//    NSMutableArray *imageNormalArr;
+//    NSMutableArray *imageSelectedArr;
+//    NSArray *controArray;
+//    if ([NSString isBlankString:tabbarModel.imageUrl] == NO) {
+//
+//        [[NSUserDefaults standardUserDefaults] setBool:[NSNumber numberWithBool:YES] forKey:AppisHaveactivity];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//
+//        NSString * name  = [NSString isBlankString:tabbarModel.name] ? @"" : tabbarModel.name;
+//        //显示活动
+//        titleArr = [NSMutableArray arrayWithObjects:@"首页",@"任务", name,@"发现",@"我的", nil];
+//        imageNormalArr = [NSMutableArray arrayWithObjects:@"shouye",@"fenlei", tabbarModel.imageUrl,@"faxian",@"wode", nil];
+//        imageSelectedArr = [NSMutableArray arrayWithObjects:@"shouyesel",@"fenleisel", tabbarModel.imageUrl,@"faxiansel",@"wodesel", nil];
+//        NSString *tempH5Url = [NSString stringWithFormat:@"%@", tabbarModel.action];
+//        DongwangPrivetaWebViewController *invitedShareVC = [[DongwangPrivetaWebViewController alloc] init];
+//        invitedShareVC.protoclUrlText = tempH5Url;
+//        invitedShareVC.titleName =  tabbarModel.name;
+//        invitedShareVC.type =  VCPressent;
+//        invitedShareVC.isActity = YES;
+//        controArray = @[[DongwangMallViewController new], [DongwangFenleiViewController new], invitedShareVC,[DongwangHotTizuViewController new], [DongFangMyCenterViewController new]];
+//    }else{
+//        [[NSUserDefaults standardUserDefaults] setBool:[NSNumber numberWithBool:NO] forKey:AppisHaveactivity];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//        //不显示活动
+//        titleArr = [NSMutableArray arrayWithObjects:@"首页",@"任务",@"发现",@"我的", nil];
+//        imageNormalArr = [NSMutableArray arrayWithObjects:@"shouye",@"fenlei",@"faxian",@"wode", nil];
+//        imageSelectedArr = [NSMutableArray arrayWithObjects:@"shouyesel",@"fenleisel",@"faxiansel",@"wodesel", nil];
+//       controArray = @[[DongwangMallViewController new], [DongwangFenleiViewController new], [DongwangHotTizuViewController new], [DongFangMyCenterViewController new]];
+//    }
+    
+    
+    
+    
+    
+    
+    
+//    //初始化标题数组, 未选择图片数组, 选择图片数组, 控制器数组
     NSMutableArray *titleArr;
     NSMutableArray *imageNormalArr;
     NSMutableArray *imageSelectedArr;
     NSArray *controArray;
-    if ([tabbarModel.status integerValue] == 1) {
         //显示活动
-        
-        titleArr = [NSMutableArray arrayWithObjects:@"首页",@"分类", @"",@"发现",@"我的", nil];
-        imageNormalArr = [NSMutableArray arrayWithObjects:@"shouyeweixuanzhong",@"fenleiweixuanzhong", tabbarModel.picture,@"PathFill",@"wodeweixuanzhong", nil];
-        imageSelectedArr = [NSMutableArray arrayWithObjects:@"shouyexuanzhong",@"fenleixuanzhong", tabbarModel.picture,@"PathXuanFill",@"wodexuanzhong", nil];
-        NSString *tempH5Url = [NSString stringWithFormat:@"%@", tabbarModel.h5Url];
-        DongwangActityViewController *invitedShareVC = [[DongwangActityViewController alloc] init];
-//        invitedShareVC.homeInvitedShareType = CHHomeInvitedShareViewControllerTabbar;
-        invitedShareVC.htmlUrl = tempH5Url;
-        controArray = @[[DongwangHomeViewController new], [DongwangFenleiViewController new], invitedShareVC,[DongwangFindViewController new], [DongFangMyCenterViewController new]];
-    }else{
-        //不显示活动
-        titleArr = [NSMutableArray arrayWithObjects:@"首页",@"任务",@"发现",@"我的", nil];
-        imageNormalArr = [NSMutableArray arrayWithObjects:@"shouyeweixuanzhong",@"fenleiweixuanzhong",@"PathFill",@"wodeweixuanzhong", nil];
-        imageSelectedArr = [NSMutableArray arrayWithObjects:@"shouyexuanzhong",@"fenleixuanzhong",@"PathXuanFill",@"wodexuanzhong", nil];
-    controArray = @[[DongwangHomeViewController new], [DongwangFenleiViewController new], [DongwangFindViewController new], [DongFangMyCenterViewController new]];
-    }
+        titleArr = [NSMutableArray arrayWithObjects:@"",@"", @"",@"",@"", nil];
+        imageNormalArr = [NSMutableArray arrayWithObjects:@"youle_nomal",@"quanzi_nomal", @"dati_nomal",@"shangcheng_nomal",@"daletou_nomal", nil];
+        imageSelectedArr = [NSMutableArray arrayWithObjects:@"youle_sel",@"quanzi_sel", @"dati_sel",@"shangcheng_sel",@"daletou_sel", nil];
+
+    //DongwangMallViewController
+    //DongwangyouleChangViewController
+controArray = @[[DongwangyouleChangViewController new], [DongwangMyChatListViewController new], [DongwangHomeViewController_V3 new],[DongwangHomeViewController_V2 new], [DongwangDaletouViewController new]];
+//
     for (int i = 0; i < titleArr.count; i++) {
     UINavigationController *nav = [UINavigationController rootVC:controArray[i] translationScale:YES];
     [self addChildViewController:nav andTitle:titleArr[i] image:imageNormalArr[i] selectImage:imageSelectedArr[i]];
     }
     
+    self.selectedIndex= 2;
 }
 -(void)addChildViewController:(UIViewController *)vc andTitle:(NSString *)title image:(NSString *)image selectImage:(NSString *)selectImage{
-    //设置title和图片
-    NSString *tempMode = [NSString stringWithFormat:@"%@",_tabbarModel.mode];
-    NSString *tempColor =[NSString stringWithFormat:@"%@", _tabbarModel.color];
-    NSString *tempTitle = @"";  //接口返回为空没有title，key
-    CGFloat tabbarIItemMakeFloat = 2;
-    CGFloat btnH = [_tabbarModel.height floatValue]; // 高度
-    CGFloat btnW = [_tabbarModel.width floatValue]; // 宽度
-    if ([NSString isBlankString:title] == YES) {
-        if ([tempMode isEqualToString:@"2"] && [NSString isBlankString:tempTitle] == YES) {
-            title = @"";
-            tabbarIItemMakeFloat = 5;
-        } else if ([tempMode isEqualToString:@"1"] && [NSString isBlankString:tempTitle] == NO) {
-            title = tempTitle;
-        }
-    }
+//    //设置title和图片
+//    NSString *tempMode = [NSString stringWithFormat:@"%@",_tabbarModel.mode];
+//    NSString *tempColor = @"#9F9FA0";
+//    NSString *tempTitle = @"";  //接口返回为空没有title，key
+    CGFloat tabbarIItemMakeFloat = [NSString isBlankString:title] ? 0: 0;
+//    CGFloat btnH = 50;
+//    CGFloat btnW = 50;
+//    if ([NSString isBlankString:title] == YES) {
+//        if ([tempMode isEqualToString:@"2"] && [NSString isBlankString:tempTitle] == YES) {
+//            title = @"";
+//            tabbarIItemMakeFloat = 5;
+//        } else if ([tempMode isEqualToString:@"1"] && [NSString isBlankString:tempTitle] == NO) {
+//            title = tempTitle;
+//        }
+//    }
+//
+    
+ 
     vc.tabBarItem.title = title;
     UIImage *rootNotImage;
     UIImage *rootSelectImage;
-    if ([image rangeOfString:@"http://"].location !=NSNotFound || [image rangeOfString:@"https://"].location !=NSNotFound) {
-       rootNotImage = [UIImage imageResize:[UIImage getImageFromURL:image] andResizeTo:CGSizeMake(btnW, btnH)];
-        rootSelectImage = [UIImage imageResize:[UIImage getImageFromURL:selectImage] andResizeTo:CGSizeMake(btnW, btnH)];
-#pragma mark -- 改变中间字体颜色
-        NSMutableDictionary *textAttrs=[NSMutableDictionary dictionary];
-        textAttrs[NSForegroundColorAttributeName] = [UIColor colorWithHexString:tempColor];
-        [vc.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
-        [vc.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateSelected];
-    } else {
+//    if ([image rangeOfString:@"actityicon"].location !=NSNotFound || [image rangeOfString:@"actityicon"].location !=NSNotFound) {
+//       rootNotImage = [UIImage imageResize:[UIImage getImageFromURL:image] andResizeTo:CGSizeMake(btnW, btnH)];
+//        rootSelectImage = [UIImage imageResize:[UIImage getImageFromURL:selectImage] andResizeTo:CGSizeMake(btnW, btnH)];
+//      #pragma mark -- 改变中间字体颜色
+//        NSMutableDictionary *textAttrs=[NSMutableDictionary dictionary];
+//        textAttrs[NSForegroundColorAttributeName] = [UIColor colorWithHexString:tempColor];
+//        textAttrs[NSForegroundColorAttributeName] = [UIColor colorWithHexString:tempColor];
+//        [vc.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
+//        [vc.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateSelected];
+//    } else {
         rootNotImage = [UIImage imageNamed:image];
         rootSelectImage = [UIImage imageNamed:selectImage];
-    }
+//    }
 
     vc.tabBarItem.image = [rootNotImage imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
     vc.tabBarItem.selectedImage = [rootSelectImage imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
@@ -103,6 +160,7 @@
     //    [vc.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -2.5)];
     //设置图片位置  注意：图片 上下 or 左右 的间距要一样，否侧有些手机上会变形
 //    [vc.tabBarItem setImageInsets:UIEdgeInsetsMake(-(tabbarIItemMakeFloat), 0, 0, 0)]; //
+    
     vc.tabBarItem.imageInsets = UIEdgeInsetsMake(-tabbarIItemMakeFloat, 0, tabbarIItemMakeFloat, 0);
     //添加到
     [self addChildViewController:vc];
@@ -112,6 +170,15 @@
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
     return YES;
 }
+
+//监听状态栏的点击
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+//{
+//    if ([touches.anyObject locationInView:nil].y <= 20)
+//    {
+//        BDJLog(@"点击了状态栏");
+//    }
+//}
 
 #pragma mark - 禁止屏幕旋转
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
@@ -137,6 +204,15 @@
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     //点击tabBarItem动画
     [self tabBarButtonClick:[self getTabBarButton]];
+    DongwangBaseViewController *vc = tabBarController.selectedViewController;
+    NSDate *date = [[NSDate alloc] init];
+    if ([vc isEqual:viewController]) {
+    if (date.timeIntervalSince1970 - _lastDate.timeIntervalSince1970 < 0.4) {
+    [[NSNotificationCenter defaultCenter]  postNotificationName:@"DongwangChangetuijianVCOfferset" object:nil];
+    }
+    _lastDate = date;
+    }
+    
 }
 - (UIControl *)getTabBarButton{
     NSMutableArray *tabBarButtons = [[NSMutableArray alloc]initWithCapacity:0];

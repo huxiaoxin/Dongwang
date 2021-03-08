@@ -12,9 +12,11 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #import "Macros.h"
 #import "Header.h"
+#import <MFSIdentifier/MFSIdentifier.h>
 #import "UIColor+ColorChange.h"
 #import "UIView+HZXFrame.h"
 #import "UIViewController+IOS13.h"
+#import "UITextField+AddPlaceholder.h"
 #import "NSString+StringSize.h"
 #import "Define.h"
 #import "UIView+shadowPath.h"
@@ -42,5 +44,14 @@
 #import "UserManager.h"
 #import "UIButton+CHRegex.h"
 #import "UIButton+HZXTouchuArea.h"
+#import "NSArray+CHRegex.h"
+#import "CHButton.h"
+#import "UILabel+ChangeLineSpaceAndWordSpace.h"
+#import "TableViewAnimationKitHeaders.h"
+#import "DongwangMofangImgView.h"
+#import "UIImage+getImgageSize.h"
+#import "MJRefreshManager.h"
+#import "DongwangPrivetaWebViewController.h"
+#import "DataBuried.h"
 #endif /* PrefixHeader_pch */
 

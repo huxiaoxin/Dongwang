@@ -4,11 +4,9 @@
 //
 //  Created by apple on 2018/4/16.
 //  Copyright © 2018年 Shuyun. All rights reserved.
-//
 
 #ifndef Macros_h
 #define Macros_h
-
 #define CHIS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define CHISiPhoneX [[UIScreen mainScreen] bounds].size.width >=375.0f && [[UIScreen mainScreen] bounds].size.height >=812.0f&& CHIS_IPHONE
 //状态栏高度
@@ -25,7 +23,6 @@
 #define kBottomSafeHeight (CGFloat)(CHISiPhoneX?(34):(0))
 // iPhoneX的状态栏高度差值
 #define kTopBarDifHeight (CGFloat)(CHISiPhoneX?(24):(0))
-
 
 //屏幕宽高
 #define  SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
@@ -45,7 +42,10 @@
 #define ISIPHONE_4  (ISIPHONE && SCREEN_MAX_LENGTH == 480.0f)  // 4/4s            3.5寸   320*480
 #define ISIPHONE_5  (ISIPHONE && SCREEN_MAX_LENGTH == 568.0f)  // 5/5s/se           4寸   320*568
 //#define ISIPHONE_5 YES
-#define ISIPHONE_6  (ISIPHONE && SCREEN_MAX_LENGTH == 667.0f)  // 6/6s/7/8        4.7寸   375*667
+
+#define ISIPHONE_6  (ISIPHONE && SCREEN_MAX_LENGTH == 667.0f)  // 6/6s/7/8 /se       4.7寸   375*667
+#define ISIPHONE_11  (ISIPHONE && SCREEN_MAX_LENGTH == 896.0f) //11   11promax       414*896
+#define ISIPHONE_11Pro  (ISIPHONE && SCREEN_MAX_LENGTH == 812.0f) //11pro         375*812
 #define ISIPHONE_6P (ISIPHONE && SCREEN_MAX_LENGTH == 736.0f)  // 6p/6ps/7p/8p    5.5寸   414*736
 #define ISIPHONE_X  (ISIPHONE && SCREEN_MAX_LENGTH >= 812.0f && [[UIScreen mainScreen] bounds].size.width >=375.0f)  // iPhonex         5.8寸   375*812
 
@@ -100,7 +100,6 @@
 #define EasyNotificationRemove(kName) [EasyNotificaiotn removeObserver:self name:kName object:nil];
 // 右侧响应长度
 #define CARDITEM_RIGHT_RESPONDLENGTH    SCREEN_WIDTH / 320.0 * 80
-
 // --- 字体
 #define RealWidth(x) (int)(x * Proport_Width)
 #define PFR [[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0 ? @"PingFangSC-Regular" : @"PingFang SC"
@@ -124,6 +123,7 @@
 #define PFR7Font [UIFont fontWithName:PFR size:RealWidth(7)]
 
 #define PFS @"PingFangSC-Semibold" // 平方中粗
+#define PFS70Font [UIFont fontWithName:PFS size:RealWidth(70)]
 #define PFS50Font [UIFont fontWithName:PFS size:RealWidth(50)]
 #define PFS40Font [UIFont fontWithName:PFS size:RealWidth(40)]
 #define PFS32Font [UIFont fontWithName:PFS size:RealWidth(32)]
@@ -149,17 +149,103 @@
 
 #pragma mark -- 用户头像
 #define HeaderImageArray @[@"头像-2", @"头像-3", @"头像-4", @"头像-5", @"头像-6", @"头像-7", @"头像-8", @"头像-9"]
-
 #pragma mark -- ipurl
 #define BASE_IPURL @"http://192.168.3.155" // http://192.168.3.137:8080| http://192.168.3.157
-//#define BASE_IPURL @"http://139.224.221.200:8080"
-//#define BASE_IPURL @"http://139.224.199.106:8080"
-//#define BASE_IPURL @"https://api-syksc.25876.com"
+
+  #define Protocl_Url @"http://192.168.3.157/"  //隐私协议 用户政策
+   //#define Protocl_Url @"http://47.101.168.243:91/preview/"  //隐私协议 用户政策
+   #define jifenpaifan @"dongwang_h5/integral_flip"  //积分翻牌测试
+ #define daletou @"dongwang_h5/document/index.html?type=grandLotto"  //大乐透规则
+
+ //#define jifenpaifan @"dongwang_h5/integral_flip/index.html"  //积分翻牌予发布
+
+#define MyintegralExchange  @"/dongwang_h5/document/index.html?type=integralExchange" //积分兑换规则
+  // #define Dongwang_BaseUrl @"http://192.168.3.180:8069/" //本机
+    #define Dongwang_BaseUrl   @"http://192.168.3.157:8069/" //测试
+  //#define Dongwang_BaseUrl      @"http://3621g2l767.wicp.vip:17570/"//外网
+  //#define Dongwang_BaseUrl @"http://192.168.3.117:8069/" //本机
+  //#define Dongwang_BaseUrl @"http://47.101.168.243:8090/" //生产
+
+
+#define User_Login        @"dongwang-app/app/user/login/v1"  //用户登录
+#define Shanping_Img      @"dongwang-app/app/screen/getScreenData" //闪屏
+#define effect_lottie     @"/dongwang-app/app/effect/v1" //动效
+#define broadcast         @"/dongwang-app/app/broadcast/v1" //中奖列表(消息滚动)
+#define Phone_Code        @"dongwang-app/app/sms/getSmsCodeByPhone" //获取验证码
+#define User_Loginout     @"dongwang-app/app/user/logout" //登出
+#define User_Info         @"dongwang-app/app/user/info" //用户信息
+#define User_DeleAccount  @"dongwang-app/app/user/cancelAccount" //注销账户
+#define User_UploadImg    @"dongwang-app/app/user/updateUserInfo"//上传头像
+#define User_realAuth     @"dongwang-app/app/user/realAuth/v1"//实名认证
+#define User_bingwechat   @"dongwang-app/app/user/bindWx"  //绑定微信
+#define User_bingwechat_hwc   @"dongwang-app/app/user/bindWx/v1"  //绑定微信
+#define User_addresslist  @"dongwang-app/receive/address/addressList" //收货地址列表
+#define User_commiteaddress @"dongwang-app/receive/address/save" //新增收货地址
+#define User_deleateddress @"dongwang-app/receive/address/delete" //删除收货地址
+#define User_editaddress @"dongwang-app/receive/address/update" //编辑收货地址
+
+#define User_ProvinceList @"dongwang-app/app/province/getProvinceList" //省市区
+#define User_addressInfo  @"dongwang-app/receive/address/info" //地址详情
+#define User_prize         @"dongwang-app/app/prize/getMyPrizeList/v1"//我的奖品信息列表接口
+#define User_daoju         @"dongwang-app/app/prize/getPropList/v1"//我的道具列表接口
+#define User_exam         @"dongwang-app/log/exam/getMyGroupList"//我的成绩
+#define User_DetailList         @"dongwang-app/log/exam/getMyGroupDetailList"//我的成绩详情
+
+#define User_meaasge      @"dongwang-app/app/message/list"//我的消息
+#define User_meaasgeDetai @"dongwang-app/app/user/info"//我的消息详情
+
+#define User_feedBack      @"dongwang-app/app/feedBack/save"//用户反馈
+#define User_bindalipay     @"dongwang-app/app/user/bindAliPay/v1"//绑定支付宝
+#define User_goWithdraw    @"dongwang-app/app/user/goWithdraw/v1"//提现
+#define User_drawdetail    @"dongwang-app/app/withdraw/cashDetail"//明细
+#define User_getSignList   @"dongwang-app/app/sign/getSignList/v1"//签到
+#define User_goSign        @"dongwang-app/app/sign/goSign/v1"//立即签到
+
+#define User_getTaskList      @"dongwang-app/app/task/getTaskList"//任务
+#define User_getFindHotGroup   @"dongwang-app/app/find/getFindHotGroup"//发现
 
 
 
-#define Protocl_Url @"http://192.168.3.157/"  //隐私协议 用户政策
+#define Home_taglist        @"dongwang-app/app/tag/list" //首页顶部标签栏
+#define Home_bannar        @"dongwang-app/app/home/getBannerList/v1" //首页banner
+#define Home_IconList        @"dongwang-app/app/home/getHomeIconList/v1" //首页Icon
+#define Home_AnsureList       @"dongwang-app/app/home/homeAnswerList/v1" //首页题组
+#define Home_AnsureList_old       @"dongwang-app/app/home/homeAnswerList" //首页题组(代志成)
 
+#define ActiveReward          @"dongwang-app/app/integral/getActiveRewardList"
+//活跃奖励积分
+
+#define takeActiveIntegral   @"dongwang-app/app/integral/takeActiveIntegral"
+//领取活跃积分
+
+#define getIntegralDetailList          @"dongwang-app/app/integral/getIntegralDetailList"
+//活跃列表
+#define getIntegralPrizeList @"dongwang-app/app/integral/getIntegralPrizeList"
+//积分翻牌奖品展示列表
+
+//用户积分兑换道具(免答卡、加时卡)
+#define  userexchangeProp   @"dongwang-app/app/integral/exchangeProp"
+#define getExchangeCardList @"dongwang-app/app/integral/getExchangeCardList"
+//积分兑换模块兑换记录列表
+#define ViewsTimer   @"dongwang-app/app/point/detention/v1"
+//页面浏览时长
+
+#define userBanding_hwc   @"/dongwang-app/app/user/bindPhone"  //绑定微信
+
+#define bulletChat_danmu  @"dongwang-app/app/game/lottery/bulletChat" //弹幕
+
+#define daletou_status    @"dongwang-app/app/game/lottery/getSection" //大乐透状态
+
+#define daletou_myLottery  @"dongwang-app/app/game/lottery/myLottery"//我的乐透码
+
+
+#define joinLottery       @"dongwang-app/app/game/lottery/joinLottery" //立即参与
+
+#define pastActivity        @"dongwang-app/app/game/lottery/pastActivity" //往期列表
+#define pastDetail         @"dongwang-app/app/game/lottery/pastDetail" //往期详情
+#define getAnswerResult    @"dongwang-app/app/game/lottery/getAnswerResult"//获取正确答案
+
+#define receiveAwards      @"dongwang-app/app/game/lottery/receiveAwards" //去领取
 #pragma mark -- 轮循3次之后都不成功, 使用ip请求一次数据
 #define StandbyIPURL @"http://106.15.130.118" // http://106.15.130.118
 

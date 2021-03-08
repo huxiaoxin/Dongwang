@@ -7,8 +7,10 @@
 
 #import "DongwangBangdingNextViewController.h"
 #import "RITLTimer.h"
+#import "DongwangLogoinViewModel.h"
+#import <MFSIdentifier-umbrella.h>
 
-@interface DongwangBangdingNextViewController ()
+@interface DongwangBangdingNextViewController ()<UITextFieldDelegate>
 @property(nonatomic,strong) UITextField * DongwangPhoneTextField;
 @property(nonatomic,strong) UIButton *  DongwangCodeBtn;
 @property(nonatomic,strong) UIButton *  DongwangLogoinBtn;
@@ -20,28 +22,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#F7EEFF"];
+
     self.gk_navTitle = @"输入验证码";
     self.Count = 60;
     self.gk_interactivePopDisabled = YES;
-
     UIImageView * DongwangBJImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, NaviH, SCREEN_Width, K(532.5))];
     DongwangBJImgView.image = [UIImage imageNamed:@"懂王logo背景"];
     [self.view addSubview:DongwangBJImgView];
-//
     UIView *  Dongwanginputline = [[UIView alloc]initWithFrame:CGRectMake(K(28.5), K(232), SCREEN_WIDTH-K(47), K(0.6))];
     Dongwanginputline.backgroundColor = [UIColor colorWithHexString:@"#999999"];
     [self.view addSubview:Dongwanginputline];
-//
     UIImageView * DongwangImgIconImgView = [[UIImageView alloc]initWithFrame:CGRectMake(K(28.5), CGRectGetMaxY(Dongwanginputline.frame)-K(10+22), K(22), K(22))];
     DongwangImgIconImgView.image = [UIImage imageNamed:@"mima"];
     [self.view addSubview:DongwangImgIconImgView];
-//
     CGSize CodeSize = [@"重新获取(200)" cxl_sizeWithString:KSysFont(13)];
     UITextField * DongwangPhoneTextField = [[UITextField alloc]initWithFrame:CGRectMake(CGRectGetMaxX(DongwangImgIconImgView.frame)+K(10), CGRectGetMaxY(Dongwanginputline.frame)-K(40), CGRectGetWidth(Dongwanginputline.frame)-CGRectGetMaxX(DongwangImgIconImgView.frame)-K(20+50), K(35))];
     DongwangPhoneTextField.keyboardType   =  UIKeyboardTypePhonePad;
     DongwangPhoneTextField.clearButtonMode =  UITextFieldViewModeAlways;
     DongwangPhoneTextField.textColor = LGDBLackColor;
     DongwangPhoneTextField.font = KSysFont(16);
+    DongwangPhoneTextField.delegate = self;
     DongwangPhoneTextField.attributedPlaceholder =  [[NSAttributedString alloc] initWithString:@"请输入验证码" attributes:@{NSFontAttributeName:KSysFont(13),NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#999999"]}];
     [DongwangPhoneTextField addTarget:self action:@selector(textFieldEditingChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.view addSubview:DongwangPhoneTextField];
@@ -73,9 +74,6 @@
     }];
         
     });
-
-    
-
     UILabel *  Dongwangmsglb = [[UILabel alloc]initWithFrame:CGRectMake(K(28), CGRectGetMaxY(Dongwanginputline.frame)+K(10), SCREEN_WIDTH, K(18))];
     Dongwangmsglb.textColor = [UIColor colorWithHexString:@"#999999"];
     Dongwangmsglb.font = KSysFont(13);
@@ -96,21 +94,54 @@
     [self.view addSubview:DongwangLogoinBtn];
     _DongwangLogoinBtn = DongwangLogoinBtn;
     
-    
-    // Do any additional setup after loading the view.
+
 }
 #pragma mar--登录
 -(void)DongwangLogoinBtnClick{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    });
-    
+    if (_DongwangPhoneTextField.text.length != 6) {
+    [CHShowMessageHud showMessageText:@"请输入验证码"];
+    return;
+    }
+    [self.view endEditing:YES];
+    NSString *deviceID = [MFSIdentifier deviceID];
+    NSLog(@"deviceId: %@", deviceID);
+    NSMutableDictionary  * dongwanparmter = [NSMutableDictionary dictionary];
+    if (self.isapplelogoin) {
+        NSString * appleId = [[NSUserDefaults standardUserDefaults] objectForKey:@"userIdentifier"];
+        NSString * appleemail = [[NSUserDefaults standardUserDefaults] objectForKey:@"Appleemail"];
+        NSString * applename = [[NSUserDefaults standardUserDefaults] objectForKey:@"Appleusername"];
+        [dongwanparmter setObject:appleId forKey:@"appleId"];
+        [dongwanparmter setObject:appleemail forKey:@"email"];
+        [dongwanparmter setObject:applename forKey:@"name"];
+        [dongwanparmter setObject:@"4" forKey:@"type"];
+        [dongwanparmter setObject:_DongwangPhoneTextField.text forKey:@"smsCode"];
+        [dongwanparmter setObject:self.phoneText forKey:@"phone"];
+        [dongwanparmter setObject:@"1" forKey:@"wxSmsTip"];
+        [dongwanparmter setObject:deviceID forKey:@"deviceId"];
+    }else{
+        //type = 2 微信登录
+        //type = 5 QQ登录
+        [dongwanparmter setObject:self.Mytype forKey:@"type"];
+        [dongwanparmter setObject:_DongwangPhoneTextField.text forKey:@"smsCode"];
+        [dongwanparmter setObject:self.phoneText forKey:@"phone"];
+        [dongwanparmter setObject:@"1" forKey:@"wxSmsTip"];
+        [dongwanparmter setObject:deviceID forKey:@"deviceId"];
+    }
+    MJWeakSelf;
+    [DongwangLogoinViewModel CLShanyanLogoinWithParmters:dongwanparmter.mutableCopy RequestCuurentControlers:self logoinSuuced:^(id  _Nonnull object) {
+        [UserManager userLoginSucced];
+        [weakSelf BaseTabarRequest];
+    } logoinfairler:^{
+        
+    }];
+
 }
 
 #pragma mark--获取验证码
 -(void)DongwangCodeBtnClick{
     MJWeakSelf;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.timer = [RITLTimer scheduledTimerWithTimeInterval:1 userInfo:nil repeats:YES BlockHandle:^(id  _Nonnull info) {
+    
+    [DongwangLogoinViewModel CodeloginRequestWithParmtersw:@{@"phone":self.phoneText,@"type":@"2"}.mutableCopy RequestCuurentControlers:self logoinSuuced:^(id  _Nonnull object) {
         weakSelf.Count --;
         if (weakSelf.Count == 0) {
             [weakSelf.timer invalidate];
@@ -119,17 +150,16 @@
             weakSelf.DongwangCodeBtn.enabled = YES;
             [weakSelf.DongwangCodeBtn setTitle:@"重新获取" forState:UIControlStateNormal];
         }else{
-        weakSelf.DongwangCodeBtn.enabled = NO;
-        [weakSelf.DongwangCodeBtn setTitle:[NSString stringWithFormat:@"重新获取(%lds)",weakSelf.Count] forState:UIControlStateNormal];
+            weakSelf.DongwangCodeBtn.enabled = NO;
+            [weakSelf.DongwangCodeBtn setTitle:[NSString stringWithFormat:@"重新获取(%lds)",weakSelf.Count] forState:UIControlStateNormal];
         }
+    } logoinfairler:^{
     }];
-        
-    });
-    
+
 }
 
 -(void)textFieldEditingChanged:(UITextField *)DongwangTextField{
-    if (DongwangTextField.text.length ==4) {
+    if (DongwangTextField.text.length ==6) {
         _DongwangLogoinBtn.enabled = YES;
         [_DongwangLogoinBtn setBackgroundImage:[UIImage imageNamed:@"登录按钮背景"] forState:UIControlStateNormal];
 
@@ -139,6 +169,22 @@
         [_DongwangLogoinBtn setBackgroundColor:[UIColor colorWithHexString:@"#999999"]];
     }
 }
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    if (textField == _DongwangPhoneTextField) {
+    //这里的if时候为了获取删除操作,如果没有次if会造成当达到字数限制后删除键也不能使用的后果.
+        if (range.length == 1 && string.length == 0) {
+            return YES;
+        }
+        //so easy
+        else if (_DongwangPhoneTextField.text.length >= 6) {
+            _DongwangPhoneTextField.text = [textField.text substringToIndex:6];
+            return NO;
+        }
+    }
+    return YES;
+}
+
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     if (self.timer) {

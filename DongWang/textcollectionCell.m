@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.myimage.backgroundColor = [UIColor clearColor];
     // Initialization code
 }
 

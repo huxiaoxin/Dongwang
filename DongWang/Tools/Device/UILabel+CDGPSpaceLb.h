@@ -5,6 +5,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setText:(NSString *)text spacing:(CGFloat)spacing;
 //设置行与行之间的距离
 - (void)setText:(NSString *)text lineSpacing:(CGFloat)lineSpacing;
--(CGSize)getSpaceLabelHeight:(NSString*)str withFont:(UIFont*)font withWidth:(CGFloat)width;
+-(CGSize)getSpaceLabelHeight:(NSString*)str withFont:(UIFont*)font withWidth:(CGFloat)width lineSpacing:(CGFloat)lineSpacing;
 @end
 NS_ASSUME_NONNULL_END

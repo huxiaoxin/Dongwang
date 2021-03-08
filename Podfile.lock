@@ -14,94 +14,103 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - Aspects (1.4.1)
   - CL_ShanYanSDK (2.3.3.2)
-  - GKNavigationBarViewController (2.6.3)
+  - GKNavigationBarViewController (2.7.0)
   - HUPhotoBrowser (1.4.5):
     - SVProgressHUD
   - IQKeyboardManager (6.5.6)
   - JCore (2.3.6)
   - JPush (3.3.6):
     - JCore (< 3.0.0, >= 2.0.0)
+  - JXCategoryView (1.5.8)
+  - JXPagingView/Pager (2.0.13)
   - KJBannerView (1.3.5):
     - KJBannerView/KJBannerView (= 1.3.5)
   - KJBannerView/KJBannerView (1.3.5)
+  - lottie-ios (2.5.3)
   - LYEmptyView (1.3.1)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
+  - MFSCache (2.0.1):
+    - MFSJSONEntity
+  - MFSIdentifier (1.0.2):
+    - MFSCache
+  - MFSJSONEntity (1.0.6)
   - MJRefresh (3.5.0)
   - MOFSPickerManager (2.2.5)
   - pop (1.0.12)
   - PYSearch (0.9.1)
   - QRCodeReaderViewController (3.5.2)
-  - RITLKit (2.0.3):
+  - RITLKit (2.0.5):
     - Masonry
-    - RITLKit/Category (= 2.0.3)
-    - RITLKit/ImagePicker (= 2.0.3)
-    - RITLKit/ScrollPageController (= 2.0.3)
-    - RITLKit/Utility (= 2.0.3)
-    - RITLKit/View (= 2.0.3)
-    - RITLKit/Web (= 2.0.3)
+    - RITLKit/Category (= 2.0.5)
+    - RITLKit/ImagePicker (= 2.0.5)
+    - RITLKit/ScrollPageController (= 2.0.5)
+    - RITLKit/Utility (= 2.0.5)
+    - RITLKit/View (= 2.0.5)
+    - RITLKit/Web (= 2.0.5)
     - RITLViewFrame
-  - RITLKit/Category (2.0.3):
+  - RITLKit/Category (2.0.5):
     - Masonry
     - RITLKit/Utility
     - RITLViewFrame
-  - RITLKit/ImagePicker (2.0.3):
+  - RITLKit/ImagePicker (2.0.5):
     - Masonry
     - RITLViewFrame
-  - RITLKit/ScrollPageController (2.0.3):
+  - RITLKit/ScrollPageController (2.0.5):
     - Masonry
     - RITLKit/Category
-    - RITLKit/ScrollPageController/LLSegmentBar (= 2.0.3)
+    - RITLKit/ScrollPageController/LLSegmentBar (= 2.0.5)
     - RITLKit/Utility
     - RITLViewFrame
-  - RITLKit/ScrollPageController/LLSegmentBar (2.0.3):
-    - Masonry
-    - RITLKit/Category
-    - RITLKit/Utility
-    - RITLViewFrame
-  - RITLKit/Utility (2.0.3):
-    - Masonry
-    - RITLKit/Utility/DownLoader (= 2.0.3)
-    - RITLKit/Utility/Filter (= 2.0.3)
-    - RITLKit/Utility/Reachability (= 2.0.3)
-    - RITLViewFrame
-  - RITLKit/Utility/DownLoader (2.0.3):
-    - Masonry
-    - RITLViewFrame
-  - RITLKit/Utility/Filter (2.0.3):
-    - Masonry
-    - RITLViewFrame
-  - RITLKit/Utility/Reachability (2.0.3):
-    - Masonry
-    - RITLViewFrame
-  - RITLKit/View (2.0.3):
+  - RITLKit/ScrollPageController/LLSegmentBar (2.0.5):
     - Masonry
     - RITLKit/Category
     - RITLKit/Utility
     - RITLViewFrame
-  - RITLKit/Web (2.0.3):
+  - RITLKit/Utility (2.0.5):
+    - Masonry
+    - RITLKit/Utility/DownLoader (= 2.0.5)
+    - RITLKit/Utility/Filter (= 2.0.5)
+    - RITLKit/Utility/Reachability (= 2.0.5)
+    - RITLViewFrame
+  - RITLKit/Utility/DownLoader (2.0.5):
+    - Masonry
+    - RITLViewFrame
+  - RITLKit/Utility/Filter (2.0.5):
+    - Masonry
+    - RITLViewFrame
+  - RITLKit/Utility/Reachability (2.0.5):
+    - Masonry
+    - RITLViewFrame
+  - RITLKit/View (2.0.5):
     - Masonry
     - RITLKit/Category
     - RITLKit/Utility
     - RITLViewFrame
-  - RITLPhotos (2.2.4):
+  - RITLKit/Web (2.0.5):
+    - Masonry
+    - RITLKit/Category
+    - RITLKit/Utility
+    - RITLViewFrame
+  - RITLPhotos (2.3.3):
     - Masonry
     - RITLKit
-    - RITLPhotos/Protocol (= 2.2.4)
-    - RITLPhotos/RITLCollectionModule (= 2.2.4)
-    - RITLPhotos/RITLConfig (= 2.2.4)
-    - RITLPhotos/RITLData (= 2.2.4)
-    - RITLPhotos/RITLGroupModule (= 2.2.4)
-    - RITLPhotos/RITLHoriScrollModule (= 2.2.4)
-    - RITLPhotos/RITLPhotosCategory (= 2.2.4)
-    - RITLPhotos/RITLPhotosController (= 2.2.4)
-    - RITLPhotos/RITLPhotoStore (= 2.2.4)
-    - RITLPhotos/RITLViews (= 2.2.4)
-  - RITLPhotos/Protocol (2.2.4):
+    - RITLPhotos/Protocol (= 2.3.3)
+    - RITLPhotos/RITLCollectionModule (= 2.3.3)
+    - RITLPhotos/RITLConfig (= 2.3.3)
+    - RITLPhotos/RITLData (= 2.3.3)
+    - RITLPhotos/RITLGroupModule (= 2.3.3)
+    - RITLPhotos/RITLHoriScrollModule (= 2.3.3)
+    - RITLPhotos/RITLPhotosCategory (= 2.3.3)
+    - RITLPhotos/RITLPhotosController (= 2.3.3)
+    - RITLPhotos/RITLPhotoStore (= 2.3.3)
+    - RITLPhotos/RITLViews (= 2.3.3)
+  - RITLPhotos/Protocol (2.3.3):
     - Masonry
     - RITLKit
-  - RITLPhotos/RITLCollectionModule (2.2.4):
+  - RITLPhotos/RITLCollectionModule (2.3.3):
     - Masonry
     - RITLKit
     - RITLPhotos/RITLConfig
@@ -110,31 +119,31 @@ PODS:
     - RITLPhotos/RITLPhotosCategory
     - RITLPhotos/RITLPhotoStore
     - RITLPhotos/RITLViews
-  - RITLPhotos/RITLConfig (2.2.4):
+  - RITLPhotos/RITLConfig (2.3.3):
     - Masonry
     - RITLKit
-  - RITLPhotos/RITLData (2.2.4):
+  - RITLPhotos/RITLData (2.3.3):
     - Masonry
     - RITLKit
     - RITLPhotos/Protocol
     - RITLPhotos/RITLPhotosCategory
-  - RITLPhotos/RITLGroupModule (2.2.4):
+  - RITLPhotos/RITLGroupModule (2.3.3):
     - Masonry
     - RITLKit
     - RITLPhotos/RITLCollectionModule
     - RITLPhotos/RITLPhotosCategory
     - RITLPhotos/RITLPhotoStore
-  - RITLPhotos/RITLHoriScrollModule (2.2.4):
+  - RITLPhotos/RITLHoriScrollModule (2.3.3):
     - Masonry
     - RITLKit
     - RITLPhotos/RITLConfig
     - RITLPhotos/RITLData
     - RITLPhotos/RITLPhotosCategory
     - RITLPhotos/RITLViews
-  - RITLPhotos/RITLPhotosCategory (2.2.4):
+  - RITLPhotos/RITLPhotosCategory (2.3.3):
     - Masonry
     - RITLKit
-  - RITLPhotos/RITLPhotosController (2.2.4):
+  - RITLPhotos/RITLPhotosController (2.3.3):
     - Masonry
     - RITLKit
     - RITLPhotos/Protocol
@@ -142,11 +151,11 @@ PODS:
     - RITLPhotos/RITLConfig
     - RITLPhotos/RITLData
     - RITLPhotos/RITLGroupModule
-  - RITLPhotos/RITLPhotoStore (2.2.4):
+  - RITLPhotos/RITLPhotoStore (2.3.3):
     - Masonry
     - RITLKit
     - RITLPhotos/RITLPhotosCategory
-  - RITLPhotos/RITLViews (2.2.4):
+  - RITLPhotos/RITLViews (2.3.3):
     - Masonry
     - RITLKit
     - RITLPhotos/RITLPhotosCategory
@@ -164,27 +173,33 @@ PODS:
     - WHC_ModelSqliteKit/standard (= 1.3.0)
   - WHC_ModelSqliteKit/standard (1.3.0)
   - XHInputView (1.1.1)
+  - XHWebImageAutoSize (1.1.2)
   - ZKCycleScrollView (2.0.1)
   - ZWLimitCounter (0.0.4)
   - ZWPlaceHolder (0.0.2)
 
 DEPENDENCIES:
   - AFNetworking
+  - Aspects (~> 1.4.1)
   - CL_ShanYanSDK
-  - GKNavigationBarViewController (~> 2.6.3)
+  - GKNavigationBarViewController (~> 2.7.0)
   - HUPhotoBrowser (~> 1.4.5)
   - IQKeyboardManager
   - JPush
+  - JXCategoryView
+  - JXPagingView/Pager
   - KJBannerView
+  - lottie-ios (~> 2.5.2)
   - LYEmptyView
   - Masonry
   - MBProgressHUD
+  - MFSIdentifier (= 1.0.2)
   - MJRefresh
   - MOFSPickerManager
   - pop
   - PYSearch
   - QRCodeReaderViewController (from `https://github.com/zhengjinghua/MQRCodeReaderViewController.git`)
-  - RITLPhotos (~> 2.2.4)
+  - RITLPhotos (~> 2.3.3)
   - SDCycleScrollView (~> 1.80)
   - SDWebImage (~> 5.2.5)
   - SPPageMenu (~> 3.5.0)
@@ -192,6 +207,7 @@ DEPENDENCIES:
   - WechatOpenSDK
   - WHC_ModelSqliteKit (~> 1.3.0)
   - XHInputView (~> 1.1.1)
+  - XHWebImageAutoSize
   - ZKCycleScrollView
   - ZWLimitCounter (~> 0.0.4)
   - ZWPlaceHolder (~> 0.0.2)
@@ -199,16 +215,23 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - Aspects
     - CL_ShanYanSDK
     - GKNavigationBarViewController
     - HUPhotoBrowser
     - IQKeyboardManager
     - JCore
     - JPush
+    - JXCategoryView
+    - JXPagingView
     - KJBannerView
+    - lottie-ios
     - LYEmptyView
     - Masonry
     - MBProgressHUD
+    - MFSCache
+    - MFSIdentifier
+    - MFSJSONEntity
     - MJRefresh
     - MOFSPickerManager
     - pop
@@ -224,6 +247,7 @@ SPEC REPOS:
     - WechatOpenSDK
     - WHC_ModelSqliteKit
     - XHInputView
+    - XHWebImageAutoSize
     - ZKCycleScrollView
     - ZWLimitCounter
     - ZWPlaceHolder
@@ -239,23 +263,30 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   CL_ShanYanSDK: e3a4d128274b73a498eefd098ebc0b0069667faf
-  GKNavigationBarViewController: d682ec891050fccfd3e6695ee0f3ee2f75970535
+  GKNavigationBarViewController: 72b8d2c6da7d1f02e44d5cf06b149b3616e48d9e
   HUPhotoBrowser: 87a8333c111a4e71ebf5400bf66d0eeb522c0098
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   JCore: 06a5c80c176c5e46e8698eec3c780e1abb0bf180
   JPush: a401b946dcc76b37335422487201bc1ecc8dd296
+  JXCategoryView: 778a620f76070d6598fd8d7239991b8da8326170
+  JXPagingView: 821ed274f09eaf2843a96c3a74e9d138e27d9730
   KJBannerView: b55b029353d0762be403498f4258c5de03e15753
+  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   LYEmptyView: b6d418cfa38b78df0cf243f9a9c25ccbdc399922
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MFSCache: 76baaca48f2283669709771967caedb8d0edb4c7
+  MFSIdentifier: abc345c0ae150e00856f3e3bcedcafb257e26c4b
+  MFSJSONEntity: 87c9404c87cb499de26b061f3c985eb7808bef73
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   MOFSPickerManager: 62a7e3d42e42c12be60a07ebaa72e1c785c3021b
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PYSearch: 76dee18eea3309b60921a5d6a69390a63a5dda15
   QRCodeReaderViewController: 557e3291d8fe8adf20d62b7f6bd79a3941f8ec31
-  RITLKit: bcedeca4d6f8fc7d56d6f5b2b15ad1f57cc221b6
-  RITLPhotos: 7a0ea40ccda4152ba8f13ad75d56b0ce3214a3cd
+  RITLKit: a7274cc67ca5ad6e1b1907bb3bf801e16e1e5b60
+  RITLPhotos: 82fc171958ca6d5aefec7ba4e1a73d12f96a94df
   RITLViewFrame: 4e38e6333e6b4691c1980c3fcda9ff4d08f0d2c8
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 4eabf2fa6695c95c47724214417a9c036c965e4a
@@ -265,10 +296,11 @@ SPEC CHECKSUMS:
   WechatOpenSDK: 6a4d1436c15b3b5fe2a0bd383f3046010186da44
   WHC_ModelSqliteKit: dfafef3ee872dedd9823395291fc80bf37eac46d
   XHInputView: d0dcd226f1df1d288326bdf8eb620221cc6ed3a7
+  XHWebImageAutoSize: 8e5d7bf036f960885769dbe3410579024d3ac1a1
   ZKCycleScrollView: 4b353d17b7f469b245a1c606d5a977e72b940895
   ZWLimitCounter: 382d8a4f063980f18022749672b89e0558087007
   ZWPlaceHolder: d55cce10c9930b48c31bf48e7f4748974a31f7e0
 
-PODFILE CHECKSUM: 307e6f2b39c4e4af4b4ec9d5ca227ebcec3d8f64
+PODFILE CHECKSUM: 4a26d5ed2cedf710bf90e410cb9d97573a24ea17
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "懂王logo（1024）.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "applogo.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

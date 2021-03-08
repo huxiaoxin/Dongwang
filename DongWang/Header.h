@@ -1,10 +1,11 @@
 #ifndef Header_h
 #define Header_h
-#define LGDMianColor          [UIColor colorWithHexString:@"#FFDE00"]
+#define LGDMianColor          [UIColor colorWithHexString:@"#410093"]
 #define LGDGaryColor          [UIColor colorWithHexString:@"#9F9FA0"]
 #define LGDLightGaryColor     [UIColor colorWithHexString:@"#F5F5F5"]
-#define LGDBLackColor          [UIColor blackColor]
-#define  LGDLightBLackColor          [UIColor colorWithHexString:@"#444444"]
+#define LGDBLackColor         [UIColor blackColor]
+#define LGDLightBLackColor    [UIColor colorWithHexString:@"#444444"]
+#define LGDTabarColor         [UIColor colorWithHexString:@"#804AB7"]
 
 #define LGDRedColor          [UIColor colorWithHexString:@"#F95B6A"]
 #define LGDBlueColor          [UIColor colorWithHexString:@"#25D090"]
@@ -13,6 +14,7 @@
 #define KBlFont(b)        [UIFont fontWithName:@"DINAlternate-Bold" size:b]
 #define KFZPFont(b)        [UIFont fontWithName:@"FZPWJW--GB1-0" size:b]
 #define KSysFont(c)      [UIFont systemFontOfSize:c]
+
 #define K(a)        ((a*1.0)/375.0) * SCREEN_Width
 #define kIs_iphone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define IPHONE_X (@available(iOS 11.0, *) ？ [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.bottom > 0.0 : NO )
@@ -39,6 +41,13 @@
 #define CHSYTagPhoneNumberBOOL @"CHSYTagPhoneNumberBOOL" // 闪验判断是否有预手机号
 #define CHUserEntersFirstTime @"CHUserEntersFirstTime" // 用户第一次进入启动欢迎页
 #define CHWXCodeNotification  @"CHWXCodeNotification"// 微信登录得到code
+#define TokenRestNotification  @"TokenRestNotification"// 登录失效
+#define TokenRestNotification  @"TokenRestNotification" // 登录失效
+#define  AppisHaveactivity     @"AppisHaveactivity"    //底部导航是否开启活动 
+#define  PageJumpActionNotiCation  @"PageJumpActionNotiCation"    //广告点击跳转通知
+#define  AppTabbarActitytapNotiCation  @"AppTabbarActitytapNotiCation"    //底部活动按钮点击
+#define CountdowntoAnswers           @"CountdowntoAnswers"//答题倒计时
+#define Endofanswer                  @"Endofanswer "//答题结束
 
 #define QMGJDEVID @"1" // devid
 #define QMGJAPPID @"1" // appid
@@ -158,25 +167,25 @@
 #define Color109 HEXCOLOR(0x10A0D1)
 
 
-//#ifdef DEBUG
-//#define NSLog(FORMAT, ...) fprintf(stderr, "%s:%zd\t%s\n", [[[NSString stringWithUTF8String: __FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat: FORMAT, ## __VA_ARGS__] UTF8String]);
-//
-//#else
-//
-//#define NSLog(FORMAT, ...) nil
-//
-//#endif
-
-
 #ifdef DEBUG
-
-#define NSLog(fmt, ...) NSLog((@"%s [Line %d] "fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define NSLog(FORMAT, ...) fprintf(stderr, "%s:%zd\t%s\n", [[[NSString stringWithUTF8String: __FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat: FORMAT, ## __VA_ARGS__] UTF8String]);
 
 #else
 
-#define NSLog(...)
+#define NSLog(FORMAT, ...) nil
 
 #endif
+
+
+//#ifdef DEBUG
+//
+//#define NSLog(fmt, ...) NSLog((@"%s [Line %d] "fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+//
+//#else
+//
+//#define NSLog(...)
+//
+//#endif
 
 
 //#ifdef DEBUG

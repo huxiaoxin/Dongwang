@@ -16,6 +16,21 @@
 
 @end
 @implementation DongWangPrivateView
+-(void)show:(DongwangBaseViewController *)Vc{
+    self.backgroundColor = [UIColor clearColor];
+    [Vc.view addSubview:self];
+    CGAffineTransform transform = CGAffineTransformScale(CGAffineTransformIdentity,1.0,1.0);
+    self.WhiteView.transform = CGAffineTransformScale(CGAffineTransformIdentity,0.2,0.2);
+    self.WhiteView.alpha = 0;
+    [UIView animateWithDuration:0.3 delay:0.1 usingSpringWithDamping:0.5 initialSpringVelocity:10 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.4f];
+        self.WhiteView.transform = transform;
+        self.WhiteView.alpha = 1;
+    } completion:^(BOOL finished) {
+        
+    }];
+
+}
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
     
@@ -42,7 +57,7 @@
         PrviteTitle.textAlignment = NSTextAlignmentCenter;
         PrviteTitle.textColor = LGDBLackColor;
         PrviteTitle.font = KBlFont(20);
-        PrviteTitle.text = @"隐私政策";
+        PrviteTitle.text = @"懂王隐私政策";
         [WhiteView addSubview:PrviteTitle];
         
     NSString  * PrviteText = @"感谢您下载并使用懂王！我们非常重视您的个人信息和隐私保护。为了更好的保护您的权益，请您认真阅读《隐私政策》的全部内容，如您同意并接受全部条款，请点击下方”同意“按钮并开始使用我们的产品和服务。";
@@ -56,21 +71,21 @@
 
 
         
-         POPBasicAnimation  *alpha = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
-         alpha.toValue             = @(1.f);
-         alpha.duration            = 0.3f;
-         [WhiteView pop_addAnimation:alpha forKey:nil];
-
-        POPSpringAnimation *scale = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
-         scale.fromValue           = [NSValue valueWithCGSize:CGSizeMake(1.25f, 1.25f)];
-         scale.toValue             = [NSValue valueWithCGSize:CGSizeMake(1.f, 1.f)];
-         scale.dynamicsTension     = 1000;
-         scale.dynamicsMass        = 1.3;
-         scale.dynamicsFriction    = 10.3;
-         scale.springSpeed         = 20;
-         scale.springBounciness    = 15.64;
-         scale.delegate            = self;
-         [WhiteView.layer pop_addAnimation:scale forKey:nil];
+//         POPBasicAnimation  *alpha = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+//         alpha.toValue             = @(1.f);
+//         alpha.duration            = 0.3f;
+//         [WhiteView pop_addAnimation:alpha forKey:nil];
+//
+//        POPSpringAnimation *scale = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+//         scale.fromValue           = [NSValue valueWithCGSize:CGSizeMake(1.25f, 1.25f)];
+//         scale.toValue             = [NSValue valueWithCGSize:CGSizeMake(1.f, 1.f)];
+//         scale.dynamicsTension     = 1000;
+//         scale.dynamicsMass        = 1.3;
+//         scale.dynamicsFriction    = 10.3;
+//         scale.springSpeed         = 20;
+//         scale.springBounciness    = 15.64;
+//         scale.delegate            = self;
+//         [WhiteView.layer pop_addAnimation:scale forKey:nil];
         
         UIView * botmline = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(_yyLabel.frame)+kHeight(43), CGRectGetWidth(WhiteView.frame), K(0.5))];
         botmline.backgroundColor = [UIColor colorWithHexString:@"#DEDEDE"];

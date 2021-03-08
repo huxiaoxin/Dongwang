@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (SYCM_DES)
 + (NSString *) encryptUseDESa:(NSString *)clearText;
++ (NSString *)decryptUseDES:(NSString *)cipherText;
 @end
 
 NS_ASSUME_NONNULL_END

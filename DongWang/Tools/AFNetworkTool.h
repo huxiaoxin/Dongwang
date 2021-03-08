@@ -22,7 +22,7 @@
  HttpHeader:(NSDictionary *)httpHeader
  Parameters:(NSDictionary *)parameters
     Success:(void(^)(id responseObject))success
-    Failure:(void (^)(NSError *error))failure;
+    Failure:(void (^)(id failure))failure;
 /**
  *  POST请求
  *
@@ -36,7 +36,7 @@
   HttpHeader:(NSDictionary *)httpHeader
   Parameters:(NSDictionary *)parameters
      Success:(void(^)(id responseObject))success
-     Failure:(void (^)(id))failure;
+     Failure:(void (^)(id failure))failure;
 
 
 

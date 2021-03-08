@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DongwangMyCenterTableViewCell : UITableViewCell
 @property(nonatomic,copy) NSString * NameText;
+@property(nonatomic,copy) UIView  * MyContentView;
+@property(nonatomic,copy) UIView * Dongwangline;
 @end
 
 NS_ASSUME_NONNULL_END

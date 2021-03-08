@@ -5,27 +5,15 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            uuid = "81D6E2FC-0ACD-4F80-94C4-DB12844E3DA2"
+            uuid = "EDAC8D1D-5B1D-433A-B2E1-7A3471D64AAD"
             shouldBeEnabled = "Yes"
-            condition = "$arg3 == nil"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            symbolName = "[UIImage imageNamed:]"
-            moduleName = "">
-            <Locations>
-               <Location
-                  uuid = "81D6E2FC-0ACD-4F80-94C4-DB12844E3DA2 - 9cc70c83f07c02e4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "+[UIImage imageNamed:]"
-                  moduleName = "UIKitCore"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-            </Locations>
+            breakpointStackSelectionBehavior = "1"
+            scope = "1"
+            stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

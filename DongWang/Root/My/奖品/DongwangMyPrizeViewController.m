@@ -45,13 +45,14 @@
         _SanXiaMyWorkerMenu = [[SPPageMenu alloc]initWithFrame:CGRectMake(0, 0, SCREEN_Width, K(40)) trackerStyle:SPPageMenuTrackerStyleLineAttachment];
         _SanXiaMyWorkerMenu.backgroundColor = [UIColor whiteColor];
         _SanXiaMyWorkerMenu.permutationWay = SPPageMenuPermutationWayNotScrollEqualWidths;
-        _SanXiaMyWorkerMenu.selectedItemTitleColor = [UIColor colorWithHexString:@"#FFB609"];
+        _SanXiaMyWorkerMenu.selectedItemTitleColor = [UIColor colorWithHexString:@"#8767E9"];
         _SanXiaMyWorkerMenu.unSelectedItemTitleColor = [UIColor colorWithHexString:@"#333333"];
         _SanXiaMyWorkerMenu.selectedItemTitleFont = [UIFont systemFontOfSize:font(13)];
         _SanXiaMyWorkerMenu.unSelectedItemTitleFont = [UIFont systemFontOfSize:font(13)];
         _SanXiaMyWorkerMenu.tracker.backgroundColor = [UIColor colorWithHexString:@"#FFB609"];
         [_SanXiaMyWorkerMenu setItems:self.SanXiaMyWorkerTagArr selectedItemIndex:0];
         _SanXiaMyWorkerMenu.trackerWidth = kWidth(61.5);
+        _SanXiaMyWorkerMenu.tracker.backgroundColor = [UIColor colorWithHexString:@"#8767E9"];
         _SanXiaMyWorkerMenu.delegate = self;
         _SanXiaMyWorkerMenu.bridgeScrollView = self.SanXiaMyWorkerScrollView;
         _SanXiaMyWorkerMenu.dividingLineHeight =0;
@@ -70,12 +71,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.gk_navTitle = @"我的奖品";
-    self.view.backgroundColor = [UIColor colorWithHexString:@"#EDEDED"];
+    self.isShowBtomImgView = NO;
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#804AB7"];
     [self.view addSubview:self.SanXiaMyWorkerTopView];
     [self.SanXiaMyWorkerTopView addSubview:self.SanXiaMyWorkerMenu];
     [self.view addSubview:self.SanXiaMyWorkerScrollView];
     [self.SanXiaMyWorkerMenu setItems:self.SanXiaMyWorkerTagArr selectedItemIndex:0];
     [self SanXiaMyWorkerLoadClass];
+
 }
 #pragma mark - SPPageMenu的代理方法
 - (void)pageMenu:(SPPageMenu *)pageMenu itemSelectedAtIndex:(NSInteger)index {
@@ -98,7 +101,7 @@
     if (!_SanXiaMyWorkerScrollView) {
         _SanXiaMyWorkerScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, NaviH+K(40), SCREEN_Width, scrollViewHeight-NaviH-K(0))];
         _SanXiaMyWorkerScrollView.delegate = self;
-        _SanXiaMyWorkerScrollView.backgroundColor =  [UIColor colorWithHexString:@"#EDEDED"];
+        _SanXiaMyWorkerScrollView.backgroundColor =  [UIColor clearColor];
         _SanXiaMyWorkerScrollView.pagingEnabled = YES;
         _SanXiaMyWorkerScrollView.showsHorizontalScrollIndicator = NO;
         _SanXiaMyWorkerScrollView.showsVerticalScrollIndicator = NO;

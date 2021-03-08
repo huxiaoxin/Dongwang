@@ -1,5 +1,5 @@
 #import "UILabel+CDGPSpaceLb.h"
-#define UILABEL_LINE_SPACE K(3)
+#define UILABEL_LINE_SPACE K(6)
 #define HEIGHT [ [ UIScreen mainScreen ] bounds ].size.height
 @implementation UILabel (CDGPSpaceLb)
 - (void)setText:(NSString *)text spacing:(CGFloat)spacing{
@@ -25,11 +25,11 @@
     [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [text length])];
     self.attributedText = attributedString;
 }
--(CGSize)getSpaceLabelHeight:(NSString*)str withFont:(UIFont*)font withWidth:(CGFloat)width {
+-(CGSize)getSpaceLabelHeight:(NSString*)str withFont:(UIFont*)font withWidth:(CGFloat)width lineSpacing:(CGFloat)lineSpacing {
     NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
     paraStyle.lineBreakMode = NSLineBreakByCharWrapping;
     paraStyle.alignment = NSTextAlignmentLeft;
-    paraStyle.lineSpacing = UILABEL_LINE_SPACE;
+    paraStyle.lineSpacing = lineSpacing;
     paraStyle.hyphenationFactor = 1.0;
     paraStyle.firstLineHeadIndent = 0.0;
     paraStyle.paragraphSpacingBefore = 0.0;

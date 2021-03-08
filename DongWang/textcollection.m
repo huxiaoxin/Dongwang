@@ -21,8 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    NSLog(@"------%.2f",SCREEN_WIDTH);
     self.allArray = [[NSMutableArray alloc]init];
     [self.allArray addObject:@{@"w":@"204.5",@"g":@"30"}];
     [self.allArray addObject:@{@"w":@"204.5",@"g":@"30"}];
@@ -34,8 +32,6 @@
     [self.allArray addObject:@{@"w":@"134.6",@"g":@"30"}];
     [self.allArray addObject:@{@"w":@"134.6",@"g":@"30"}];
     [self.allArray addObject:@{@"w":@"414",@"g":@"30"}];
-
-    
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
@@ -61,16 +57,16 @@
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary * dic = self.allArray[indexPath.row];
-    NSLog(@"%@",dic);
-    return CGSizeMake([dic[@"w"] floatValue],[dic[@"g"] floatValue]);
+    //return CGSizeMake([dic[@"w"] floatValue],[dic[@"g"] floatValue]);
+    return CGSizeMake(K([dic[@"w"] floatValue]),K([dic[@"g"] floatValue]));
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
-    return 5.0f;
+    return K(5);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
-    return 5;
+    return K(5);
 }
 
 

@@ -13,7 +13,17 @@
     static AFHTTPSessionManager *manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        manager = [AFHTTPSessionManager manager];
+//        manager = [AFHTTPSessionManager manager];
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        config.timeoutIntervalForRequest = 10.0;
+        manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:config];
+        
+        
+        
+//        [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+//        //设置请求的超时时间
+//        manager.requestSerializer.timeoutInterval = 10;
+//        [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     });
     return manager;
 }

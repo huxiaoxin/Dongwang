@@ -22,6 +22,7 @@
 /** <#des#> */
 @property (nonatomic,strong) NSArray * images;
 @property (nonatomic, strong)NSArray *imagesX;
+
 @property (nonatomic, strong)NSArray *stratImageArray;
 
 @end
@@ -33,11 +34,13 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = Color1;
     if (ISIPHONE_X) {
-        _stratImageArray = self.imagesX;
+        _stratImageArray = self.images;
     } else {
         _stratImageArray = self.images;
     }
+    NSLog(@"%@",self.images);
     [self.guideView guideViewDataWithImages:_stratImageArray];
+    NSLog(@"%@",_stratImageArray);
 }
 
 - (StratPageView *)guideView
@@ -81,10 +84,11 @@
         } else {
             [weakself loadHomeTabbarWithTabbarModel:nil];
         }
-    } Failure:^(NSError *error) {
+    } Failure:^(id failure) {
         [CHShowMessageHud dismissHideHUD:self.view];
         [weakself loadHomeTabbarWithTabbarModel:nil];
     }];
+    
 
 }
 -(void)loadHomeTabbarWithTabbarModel:(DongwangTabbarModel *)tabbarModel{
@@ -115,7 +119,7 @@
 - (NSArray *)images
 {
     if(!_images){
-        _images = @[@"一屏.jpg", @"二屏.jpg", @"三屏.jpg"];
+        _images = @[@"adshow1", @"adshow2", @"adshow3"];
     }
     return _images;
 }

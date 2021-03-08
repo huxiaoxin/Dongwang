@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 @interface DongwangMyInfoHeaderView : UIView
+@property(nonatomic,strong) UserInfo * info;
 @property(nonatomic,weak) id <DongwangMyInfoHeaderViewDelegate>delegate;
 @end
 

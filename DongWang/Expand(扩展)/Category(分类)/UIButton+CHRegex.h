@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#define defaultInterval .6// 默认间隔时间
+#define defaultInterval .1// 默认间隔时间
 @interface UIButton (CHRegex)
 /**
  *  设置点击时间间隔

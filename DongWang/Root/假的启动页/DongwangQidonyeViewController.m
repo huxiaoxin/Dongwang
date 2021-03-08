@@ -18,7 +18,7 @@
 
 -(DongWangPrivateView *)priveView{
     if (!_priveView) {
-        _priveView = [[DongWangPrivateView alloc]initWithFrame:self.view.bounds];
+        _priveView = [[DongWangPrivateView alloc]initWithFrame:[UIScreen mainScreen].bounds];
         _priveView.delegate = self;
 
     }
@@ -28,12 +28,13 @@
     [super viewDidLoad];
     self.gk_navigationBar.hidden  =YES;
     UIImageView * DongwangImgView = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    DongwangImgView.image = [UIImage LaunchImgNameSize];
+    DongwangImgView.image = [UIImage imageNamed:@"Myqidongye"];
     DongwangImgView.userInteractionEnabled = YES;
     [self.view addSubview:DongwangImgView];
+//     [self.view addSubview:self.priveView];
     
-    [self.view addSubview:self.priveView];
-    
+    MJWeakSelf;
+    [self.priveView show:weakSelf];
     // Do any additional setup after loading the view.
 }
 
@@ -41,6 +42,11 @@
 -(void)DongWangPrivateViewDidSeltecdWithBtnIndex:(NSInteger)btnIndex{
     if (btnIndex == 0) {
         [self.priveView removeViews];
+        if (_priveView) {
+            [_priveView removeFromSuperview];
+            _priveView = nil;
+        }
+        
     }else{
         //确定就去引导页
         StratViewController * StarVc = [[StratViewController alloc]init];
@@ -48,13 +54,14 @@
     }
 }
 -(void)dealloc{
-    NSLog(@"====%s",__func__);
+    NSLog(@"%s",__func__);
 }
 -(void)DongWangPrivateViewPushToWeb{
     MJWeakSelf;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         DongwangPrivetaWebViewController * webVc = [[DongwangPrivetaWebViewController alloc]init];
-        webVc.protoclUrlText = @"dongwang_h5/document/index.html?type=policy";
+        webVc.type = VCPressent;
+        webVc.protoclUrlText = [NSString stringWithFormat:@"%@%@",Protocl_Url,@"dongwang_h5/document/index.html?type=policy"];
         UINavigationController * Dongwangav = [UINavigationController rootVC:webVc translationScale:YES];
         [weakSelf presentViewController:Dongwangav animated:YES completion:nil];
     });

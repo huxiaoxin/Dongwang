@@ -39,12 +39,10 @@
         
         //**创建背景ImageView**//
         [self addSubview:self.bgImageView];
-//        self.bgImageView.image = [UIImage imageNamed:bgname];
         [self.bgImageView sd_setImageWithURL:[NSURL URLWithString:bgname]];
         //**创建Button**//
         [self addSubview:self.processButton];
         [self.processButton startAnimationDuration:time];
-        
         //**设置ButtonTile**//
         [self setButtonTitle:showType Time:time];
     }
@@ -57,6 +55,8 @@
     if (!_bgImageView) {
         _bgImageView = [[UIImageView alloc]initWithFrame:self.bounds];
         _bgImageView.userInteractionEnabled = YES;
+        _bgImageView.layer.masksToBounds = YES;
+        _bgImageView.contentMode = UIViewContentModeScaleAspectFill;
         UITapGestureRecognizer *ImageTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(ImageViewTapClick)];
         [_bgImageView addGestureRecognizer:ImageTap];
     }
@@ -87,10 +87,10 @@
         _processButton.titleLabel.font = [UIFont systemFontOfSize:font(10)];
         [_processButton addTarget:self action:@selector(ButtonClick) forControlEvents:UIControlEventTouchUpInside];
         [_processButton setTitleColor:LGDBLackColor forState:UIControlStateNormal];
-//        __weak ProcessLaunchImageView *WeakSelf  = self;
-//        _processButton.Block = ^{
-//            [WeakSelf ButtonClick];
-//        };
+        __weak ProcessLaunchImageView *WeakSelf  = self;
+        _processButton.Block = ^{
+            [WeakSelf ButtonClick];
+        };
     }
     return _processButton;
 }
@@ -101,7 +101,7 @@
 -(void)ButtonClick{
     [self dismiss];
     if (_timer != nil) {
-        dispatch_source_cancel(_timer);
+    dispatch_source_cancel(_timer);
     }
     
     if (self.btnblock) {
@@ -117,7 +117,6 @@
     if (type == ButtonTitleJumpShowType) {
         //表示用户设置的是跳过
         [self.processButton setTitle:@"跳过" forState:UIControlStateNormal];
-        
     }else if (type == ButtonTitleTimeShowType){
         //表示用户设置的是显示倒计时
         __block NSInteger timeOut = time;
@@ -128,7 +127,7 @@
         dispatch_source_set_event_handler(_timer, ^{
             //倒计时结束，关闭
             if (timeOut <= 0) {
-                dispatch_source_cancel(_timer);
+                dispatch_source_cancel(self->_timer);
                 dispatch_async(dispatch_get_main_queue(), ^{
                 [self ButtonClick];
                 [self.processButton setTitle:@"跳过" forState:UIControlStateNormal];

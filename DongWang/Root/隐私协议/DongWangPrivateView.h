@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DongWangPrivateView : UIView
 @property(nonatomic,weak) id <DongWangPrivateViewDelegate>delegate;
 -(void)removeViews;
+-(void)show:(DongwangBaseViewController *)Vc;
 @end
 
 NS_ASSUME_NONNULL_END

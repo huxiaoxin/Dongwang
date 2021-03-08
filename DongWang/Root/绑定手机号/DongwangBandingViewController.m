@@ -10,7 +10,7 @@
 #import "DongwangBangdingNextViewController.h"
 #import "YYText.h"
 #import "ZASTextFieldFormat.h"
-
+#import "DongwangLogoinViewModel.h"
 @interface DongwangBandingViewController ()<UITextFieldDelegate>
 @property(nonatomic,strong) UIButton *  DongwangLogoinBtn;
 @property(nonatomic,strong) UITextField * DongwangPhoneTextField;
@@ -22,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#F7EEFF"];
+
     self.gk_navTitle = @"绑定手机号";
     UIImageView * DongwangBJImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, NaviH+K(21), SCREEN_Width, K(532.5))];
     DongwangBJImgView.image = [UIImage imageNamed:@"懂王logo背景"];
@@ -32,7 +34,7 @@
     Dongwanginputline.backgroundColor = [UIColor colorWithHexString:@"#999999"];
     [self.view addSubview:Dongwanginputline];
     
-    UIImageView * DongwangImgIconImgView = [[UIImageView alloc]initWithFrame:CGRectMake(K(28.5), CGRectGetMaxY(Dongwanginputline.frame)-K(10+22), K(15), K(22))];
+    UIImageView * DongwangImgIconImgView = [[UIImageView alloc]initWithFrame:CGRectMake(K(28.5), CGRectGetMaxY(Dongwanginputline.frame)-K(10+24), K(15), K(22))];
     DongwangImgIconImgView.image = [UIImage imageNamed:@"手机"];
     [self.view addSubview:DongwangImgIconImgView];
 
@@ -95,7 +97,8 @@
     [text yy_setTextHighlightRange:[[text string] rangeOfString:@"《用户协议》"] color:[UIColor colorWithHexString:@"#047FFE"] backgroundColor:[UIColor clearColor] tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
         
         DongwangPrivetaWebViewController * dongwangVc=  [[DongwangPrivetaWebViewController alloc]init];
-        dongwangVc.protoclUrlText = @"dongwang_h5/document/index.html?type=user";
+        dongwangVc.type = VCPressent;
+        dongwangVc.protoclUrlText = [NSString stringWithFormat:@"%@%@",Protocl_Url,@"dongwang_h5/document/index.html?type=user"];
         UINavigationController * dongwangNav =[UINavigationController rootVC:dongwangVc translationScale:YES];
         [weakSelf presentViewController:dongwangNav animated:YES completion:nil];
 
@@ -103,7 +106,8 @@
     //设置高亮色和点击事件
     [text yy_setTextHighlightRange:[[text string] rangeOfString:@"《隐私政策》"] color:[UIColor colorWithHexString:@"#047FFE"] backgroundColor:[UIColor clearColor] tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
         DongwangPrivetaWebViewController * dongwangVc=  [[DongwangPrivetaWebViewController alloc]init];
-        dongwangVc.protoclUrlText = @"dongwang_h5/document/index.html?type=policy";
+        dongwangVc.type = VCPressent;
+        dongwangVc.protoclUrlText = [NSString stringWithFormat:@"%@%@",Protocl_Url,@"dongwang_h5/document/index.html?type=policy"];
         UINavigationController * dongwangNav =[UINavigationController rootVC:dongwangVc translationScale:YES];
         [weakSelf presentViewController:dongwangNav animated:YES completion:nil];
 
@@ -133,14 +137,26 @@
     if (![_DongwangPhoneTextField.text isValidPhoneNum]) {
         [CHShowMessageHud showMessageText:@"手机号各式不正确，请重新输入"];
         return;
-    }    
-    DongwangBangdingNextViewController * bangdingNextVc = [[DongwangBangdingNextViewController alloc]init];
-    bangdingNextVc.phoneText = self.DongwangPhoneTextField.text;
-    [self.navigationController pushViewController:bangdingNextVc animated:YES];
-    
+    }
+   MJWeakSelf;
+   //获取验证码
+    [DongwangLogoinViewModel CodeloginRequestWithParmtersw:@{@"phone":[_DongwangPhoneTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""],@"type":@"2"}.mutableCopy RequestCuurentControlers:self logoinSuuced:^(id  _Nonnull object) {
+        NSDictionary * responeDic = (NSDictionary *)object;
+        NSDictionary * dataDic = [responeDic objectForKey:@"data"];
+        NSString * smsCode=  [NSString stringWithFormat:@"%@",[dataDic objectForKey:@"smsCode"]];
+        DongwangBangdingNextViewController * dongwangNetVc =[[DongwangBangdingNextViewController alloc]init];
+        dongwangNetVc.phoneText = [self->_DongwangPhoneTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+        dongwangNetVc.wxSmsTip = weakSelf.wxSmsTip;
+        dongwangNetVc.openid = weakSelf.openid;
+        dongwangNetVc.smsCode = smsCode;
+        dongwangNetVc.Mytype = self.Mytype;
+        dongwangNetVc.isapplelogoin = weakSelf.isappleLogoin;
+        [weakSelf.navigationController pushViewController:dongwangNetVc animated:YES];
+    } logoinfairler:^{
+        
+    }];
 }
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    
     if (textField == _DongwangPhoneTextField) {
     //这里的if时候为了获取删除操作,如果没有次if会造成当达到字数限制后删除键也不能使用的后果.
         if (range.length == 1 && string.length == 0) {

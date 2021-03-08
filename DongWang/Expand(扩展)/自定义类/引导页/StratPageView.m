@@ -62,6 +62,7 @@
 #pragma mark - 数据方法
 - (void)guideViewDataWithImages:(NSArray *)images
 {
+            
     self.images = images;
     [self.collectionView reloadData];
 }

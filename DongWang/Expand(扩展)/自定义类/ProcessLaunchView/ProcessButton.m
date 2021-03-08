@@ -30,6 +30,7 @@
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = [UIColor clearColor];
         [self.layer addSublayer:self.trackLayer];
     }
     return self;
@@ -58,7 +59,7 @@
     if (!_trackLayer) {
         _trackLayer = [CAShapeLayer layer];
         _trackLayer.frame = self.bounds;
-        _trackLayer.fillColor = self.fillColor.CGColor ? self.fillColor.CGColor : [[UIColor blackColor] colorWithAlphaComponent:0.1].CGColor ;
+        _trackLayer.fillColor = self.fillColor.CGColor ? self.fillColor.CGColor : [[UIColor whiteColor] colorWithAlphaComponent:1].CGColor ;
         _trackLayer.lineWidth = self.lineWidth ? self.lineWidth : 2.f;
         _trackLayer.strokeColor = self.trackColor.CGColor ? self.trackColor.CGColor : [UIColor whiteColor].CGColor ;
         _trackLayer.strokeStart = 0.f;

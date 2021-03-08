@@ -6,7 +6,7 @@
 //
 
 #import "UserManager.h"
-
+#import "AFNetworkTool.h"
 @implementation UserInfo
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
@@ -20,24 +20,25 @@
     }
     return self;
 }
- 
+
 - (void)setValue:(id)value forKey:(NSString *)key
 {
     if ([value isKindOfClass:[NSNull class]])
     {
+        value = @"";
         return;
     }
     [super setValue:value forKey:key];
 }
- 
+
 #pragma mark ————————— 对未定义key的处理方法 —————————————
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
     // id 变量名现在可以直接使用，比如你要将服务器的 id 转成 userid
     if([key isEqualToString:@"id"])
     {
-//          self.userid = value;
-//          return;
+        self.userid = value;
+        return;
     }
     
 }
@@ -48,16 +49,58 @@
 
 + (BOOL)saveUserInfo:(NSDictionary *)dic
 {
-   return [NSKeyedArchiver archiveRootObject:dic toFile:[self path]];
+    return [NSKeyedArchiver archiveRootObject:dic toFile:[self path]];
 }
- 
++(NSDictionary * ) userInfoTojsonStr{
+    id  data = [NSKeyedUnarchiver unarchiveObjectWithFile:[self path]];
+    NSDictionary * responeDic = (NSDictionary *)data;
+//  NSString * jsonStr =  [NSString dictionaryTurnJsonString:responeDic];
+    return responeDic;
+}
 + (UserInfo *)userInfo
 {
     id  data = [NSKeyedUnarchiver unarchiveObjectWithFile:[self path]];
-    UserInfo *model = [[UserInfo alloc]initWithDictionary:data];
-    return model;
+    NSDictionary * responeDic = (NSDictionary *)data;
+    if (responeDic.allKeys.count == 0) {
+        UserInfo * emtymodel = [[UserInfo alloc]init];
+        emtymodel.loginTime = @"";
+        emtymodel.ip = @"";
+        emtymodel.loginCount = @"";
+        emtymodel.nickName = @"";
+        emtymodel.account = @"";
+        emtymodel.code = @"";
+        emtymodel.status = @"";
+        emtymodel.wxOpenId = @"";
+        emtymodel.updateTime = @"";
+        emtymodel.updateUser = @"";
+        emtymodel.headId = @"";
+        emtymodel.realName = @"";
+        emtymodel.wxStatus = @"";
+        emtymodel.answerNum = @"";
+        emtymodel.wxHeader = @"";
+        emtymodel.idCard = @"";
+        emtymodel.userid = @"";
+        emtymodel.insertUser = @"";
+        emtymodel.gender = @"";
+        emtymodel.email = @"";
+        emtymodel.registerTime = @"";
+        emtymodel.phone = @"";
+        emtymodel.versions = @"";
+        emtymodel.appleId = @"";
+        emtymodel.header = @"";
+        emtymodel.addressStatus = @"";
+        emtymodel.createTime = @"";
+        emtymodel.password = @"";
+        emtymodel.remark = @"";
+        emtymodel.certification = @"";
+        return emtymodel;
+    }else{
+        UserInfo *model = [[UserInfo alloc]initWithDictionary:data];
+        return model;
+    }
+    
 }
- 
+
 + (BOOL)clearUserInfo
 {
     NSFileManager *defaultManager = [NSFileManager defaultManager];
@@ -79,11 +122,20 @@
         return NO;
     }
 }
++(NSString *)token{
+    NSString * token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+//    NSLog(@"获取到的token：%@",token);
+    return token;
+    
+}
 +(void)userLoginSucced{
     [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"loginState"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 +(void)userLoginout{
+    [UserManager clearUserInfo];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:AppisHaveactivity];
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"token"];
     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"loginState"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
@@ -116,5 +168,29 @@
     NSString *allName = [NSString stringWithFormat:@"%@.%@",name,type];
     return [docDir stringByAppendingPathComponent:allName];;
 }
-
++(void)UserManagerRealoadinfomationSuuced:(void(^)(void))Successblock fairler:(void(^)(void))failerblock{
+    if (![UserManager userisLogoin]) {
+        if (failerblock) {
+            failerblock();
+        }
+        return;
+    }
+//    NSLog(@"%@",[NSString stringWithFormat:@"%@%@",Dongwang_BaseUrl,User_Info]);
+    [AFNetworkTool GET:[NSString stringWithFormat:@"%@%@",Dongwang_BaseUrl,User_Info] HttpHeader:@{}.mutableCopy Parameters:@{}.mutableCopy Success:^(id responseObject) {
+        NSDictionary * data = [responseObject objectForKey:@"data"];
+        NSLog(@"个人信息:%@",data);
+        if (data.allKeys.count > 0) {
+        [UserManager saveUserInfo:data];
+        }
+        if (Successblock) {
+        Successblock();
+        }
+    } Failure:^(id failure) {
+        NSDictionary * emtyDic = [NSDictionary dictionary];
+//        [UserManager saveUserInfo:emtyDic];
+        if (failerblock) {
+            failerblock();
+        }
+    }];
+}
 @end

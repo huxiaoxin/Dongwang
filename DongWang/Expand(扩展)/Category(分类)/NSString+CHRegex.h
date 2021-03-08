@@ -19,6 +19,9 @@
 /** 手机号中间四位用****显示*/
 + (NSString *)numberPhoneSuitScanf:(NSString *)phone strRange:(NSRange)strRange;
 
+/** 指定位置****显示*/
++(NSString *)replaceStringWithAsterisk:(NSString *)originalStr startLocation:(NSInteger)startLocation lenght:(NSInteger)lenght;	
+
 /** 车牌号验证 */
 - (BOOL)isValidCarNo;
 

@@ -17,7 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , copy) NSString              * updateUser;
 @property (nonatomic , copy) NSString              * updateTime;
 @property (nonatomic , copy) NSString              * endTimeStr;
+@property (nonatomic , copy) NSString              * action;
 @property (nonatomic , copy) NSString              * endTime;
+@property (nonatomic , copy) NSString              * sourceType;
 @property (nonatomic , copy) NSString              * createTimeStr;
 @property (nonatomic , copy) NSString              * terminal;
 @property (nonatomic , copy) NSString              * imageUrl;

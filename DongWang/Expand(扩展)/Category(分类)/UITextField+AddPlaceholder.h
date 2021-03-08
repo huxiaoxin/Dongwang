@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UITextField (AddPlaceholder)
-- (void)addPlaceholders:(UIFont *)placeFont; // 占位符的字体大小
+- (void)addPlaceholders:(UIFont *)placeFont holderStr:(NSString *)str holderColor:(UIColor *)color; // 占位符的字体大小
 @end

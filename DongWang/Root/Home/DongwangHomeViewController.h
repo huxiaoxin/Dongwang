@@ -10,7 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DongwangHomeViewController : DongwangBaseViewController
-
+@property(nonatomic,strong)  NSString * showTimeStr;
+@property(nonatomic,strong)  NSString * leaveTimeStr;
 @end
 
 NS_ASSUME_NONNULL_END

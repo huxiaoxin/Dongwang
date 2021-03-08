@@ -7,8 +7,6 @@
 
 #import "DongwangCodeloginNextViewController.h"
 #import "RITLTimer.h"
-#import "DongwangTabbarModel.h"
-#import "DongwangBaseTabBarViewController.h"
 #import "DongwangLogoinViewModel.h"
 @interface DongwangCodeloginNextViewController ()<UITextFieldDelegate>
 @property(nonatomic,strong) UIButton *  DongwangCodeBtn;
@@ -16,7 +14,8 @@
 @property(nonatomic,strong) UIButton *  DongwangLogoinBtn;
 @property(nonatomic,strong)  NSTimer *  timer;
 @property(nonatomic,assign) NSInteger Count;
-
+@property(nonatomic,strong)  NSString * showTimeStr;  
+@property(nonatomic,strong)  NSString * leaveTimeStr;
 @end
 
 @implementation DongwangCodeloginNextViewController
@@ -25,6 +24,8 @@
     [super viewDidLoad];
     self.gk_navTitle = @"输入验证码";
     self.Count = 60;
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#F7EEFF"];
+
 //    self.gk_interactivePopDisabled = YES;
     UIImageView * DongwangBJImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, NaviH+K(21), SCREEN_Width, K(532.5))];
     DongwangBJImgView.image = [UIImage imageNamed:@"懂王logo背景"];
@@ -36,7 +37,7 @@
     
     UILabel * DongwangLogoTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(DongwangLogoImgView.frame)+K(19.5), SCREEN_Width, K(15))];
     DongwangLogoTitle.textAlignment =  NSTextAlignmentCenter;
-    DongwangLogoTitle.text = @"做快乐的人 懂王更懂你";
+    DongwangLogoTitle.text = @"答题争最强 开心做懂王";
     DongwangLogoTitle.font = KSysFont(16.5);
     DongwangLogoTitle.textColor = LGDBLackColor;
     [self.view addSubview:DongwangLogoTitle];
@@ -48,7 +49,6 @@
     
     UIImageView * DongwangImgIconImgView = [[UIImageView alloc]initWithFrame:CGRectMake(K(28.5), CGRectGetMaxY(Dongwanginputline.frame)-K(10+22), K(22), K(22))];
     DongwangImgIconImgView.image = [UIImage imageNamed:@"mima"];
-    DongwangImgIconImgView.backgroundColor = LGDMianColor;
     [self.view addSubview:DongwangImgIconImgView];
     
     CGSize CodeSize = [@"重新获取(200)" cxl_sizeWithString:KSysFont(13)];
@@ -70,23 +70,7 @@
     [DongwangCodeBtn addTarget:self action:@selector(DongwangCodeBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:DongwangCodeBtn];
     _DongwangCodeBtn = DongwangCodeBtn;
-    MJWeakSelf;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.timer = [RITLTimer scheduledTimerWithTimeInterval:1 userInfo:nil repeats:YES BlockHandle:^(id  _Nonnull info) {
-            weakSelf.Count --;
-            if (weakSelf.Count == 0) {
-                [weakSelf.timer invalidate];
-                weakSelf.timer = nil;
-                weakSelf.Count = 60;
-                weakSelf.DongwangCodeBtn.enabled = YES;
-                [weakSelf.DongwangCodeBtn setTitle:@"重新获取" forState:UIControlStateNormal];
-            }else{
-                weakSelf.DongwangCodeBtn.enabled = NO;
-                [weakSelf.DongwangCodeBtn setTitle:[NSString stringWithFormat:@"重新获取(%lds)",weakSelf.Count] forState:UIControlStateNormal];
-            }
-        }];
-        
-    });
+    [self DongwangRequestTimers];
     UILabel *  Dongwangmsglb = [[UILabel alloc]initWithFrame:CGRectMake(K(28), CGRectGetMaxY(Dongwanginputline.frame)+K(10), SCREEN_WIDTH, K(18))];
     Dongwangmsglb.textColor = [UIColor colorWithHexString:@"#999999"];
     Dongwangmsglb.font = KSysFont(13);
@@ -108,66 +92,45 @@
     
     // Do any additional setup after loading the view.
 }
+-(void)DongwangRequestTimers{
+    MJWeakSelf;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.timer = [RITLTimer scheduledTimerWithTimeInterval:1 userInfo:nil repeats:YES BlockHandle:^(id  _Nonnull info) {
+            weakSelf.Count --;
+            if (weakSelf.Count == 0) {
+                [weakSelf.timer invalidate];
+                weakSelf.timer = nil;
+                weakSelf.Count = 60;
+                weakSelf.DongwangCodeBtn.enabled = YES;
+                [weakSelf.DongwangCodeBtn setTitle:@"重新获取" forState:UIControlStateNormal];
+            }else{
+                weakSelf.DongwangCodeBtn.enabled = NO;
+                [weakSelf.DongwangCodeBtn setTitle:[NSString stringWithFormat:@"重新获取(%lds)",weakSelf.Count] forState:UIControlStateNormal];
+            }
+        }];
+        
+    });
+
+}
 #pragma mar--登录
 -(void)DongwangLogoinBtnClick{
     [self.view endEditing:YES];
     //登录成功 加载请求动态加载tabbar
     kWeakSelf(self);
-    [DongwangLogoinViewModel CLShanyanLogoinWithParmters:@{@"type":@"1",@"flashToken":@"",@"device":@"1",@"smsCode":[_DongwangPhoneTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""],@"phone":self.phoneText}.mutableCopy RequestCuurentControlers:self logoinSuuced:^{
+    [DongwangLogoinViewModel CLShanyanLogoinWithParmters:@{@"type":@"1",@"flashToken":@"",@"device":@"1",@"smsCode":[_DongwangPhoneTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""],@"phone":self.phoneText}.mutableCopy RequestCuurentControlers:self logoinSuuced:^(id  _Nonnull object) {
         [UserManager userLoginSucced];
-        [weakself tabarRequest];
+        [weakself BaseTabarRequest];
     } logoinfairler:^{
+        
     }];
+    
 }
--(void)tabarRequest{
-    NSDictionary *postHeader = [EncryptionTool getSignatureTimestamp];
-    NSString *url = [NSString stringWithFormat:@"%@/rest/home/tab", BASE_IPURL];
-    kWeakSelf(self);
-    [CHShowMessageHud showHUDPlainText:@"" view:self.view];
-    [AFNetworkTool GET:url HttpHeader:postHeader Parameters:nil Success:^(id responseObject) {
-        [CHShowMessageHud dismissHideHUD:self.view];
-        NSDictionary *dic = (NSDictionary *)responseObject;
-        NSLog(@"动态：%@",dic);
-        if ([dic[@"err"] isEqualToString:@"00000"]) {
-            NSDictionary *tempData = (NSDictionary *)dic[@"dat"];
-            DongwangTabbarModel * model = [DongwangTabbarModel BaseinitWithDic:tempData];
-            [weakself loadHomeTabbarWithTabbarModel:model];
-        } else {
-            [weakself loadHomeTabbarWithTabbarModel:nil];
-        }
-    } Failure:^(NSError *error) {
-        [CHShowMessageHud dismissHideHUD:self.view];
-        [weakself loadHomeTabbarWithTabbarModel:nil];
-    }];
-
-}
--(void)loadHomeTabbarWithTabbarModel:(DongwangTabbarModel *)tabbarModel{
-    DongwangBaseTabBarViewController * dongwangTabbarVc = [[DongwangBaseTabBarViewController alloc]init];
-    if (tabbarModel) {
-        dongwangTabbarVc.tabbarModel = tabbarModel;
-    }else{
-        dongwangTabbarVc.tabbarModel = [DongwangTabbarModel new];
-    }
-    [AppDelegate getAppDelegate].window.rootViewController = dongwangTabbarVc;
-}
-
 #pragma mark--获取验证码
 -(void)DongwangCodeBtnClick{
     MJWeakSelf;
     //获取验证码
-    [DongwangLogoinViewModel CodeloginRequestWithParmtersw:@{@"phone":self.phoneText}.mutableCopy RequestCuurentControlers:self logoinSuuced:^{
-        weakSelf.Count --;
-        if (weakSelf.Count == 0) {
-            [weakSelf.timer invalidate];
-            weakSelf.timer = nil;
-            weakSelf.Count = 60;
-            weakSelf.DongwangCodeBtn.enabled = YES;
-            [weakSelf.DongwangCodeBtn setTitle:@"重新获取" forState:UIControlStateNormal];
-        }else{
-            weakSelf.DongwangCodeBtn.enabled = NO;
-            [weakSelf.DongwangCodeBtn setTitle:[NSString stringWithFormat:@"重新获取(%lds)",weakSelf.Count] forState:UIControlStateNormal];
-        }
-        
+    [DongwangLogoinViewModel CodeloginRequestWithParmtersw:@{@"phone":self.phoneText,@"type":@"0"}.mutableCopy RequestCuurentControlers:self logoinSuuced:^(id  _Nonnull object) {
+        [weakSelf DongwangRequestTimers];
     } logoinfairler:^{
         
     }];
@@ -200,15 +163,17 @@
     }
     return YES;
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.showTimeStr = [NSString currentTimeStr];
+    
+}
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-//    if (self.timer) {
-//        [self.timer invalidate];
-//        self.timer = nil;
-//    }
-//    [self.view endEditing:YES];
+    self.leaveTimeStr =  [NSString currentTimeStr];
+    [[DataBuried ShareManager] CLLogoninWithParmesWithShowTimeStr:self.showTimeStr LeaveTimeStr:self.leaveTimeStr ViewPageName:2];
 }
+
 -(void)dealloc{
     NSLog(@"--%s",__func__);
 }
