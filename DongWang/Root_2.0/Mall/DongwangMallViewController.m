@@ -251,10 +251,6 @@
     
 }
 - (BOOL)mainTableViewGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
-    //禁止banner左右滑动的时候，上下和左右都可以滚动
-    if (otherGestureRecognizer == self.userHeaderView.SDCView.mainView.panGestureRecognizer) {
-        return NO;
-    }
     return YES;
 }
 

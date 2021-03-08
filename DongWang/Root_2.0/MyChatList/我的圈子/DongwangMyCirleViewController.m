@@ -99,8 +99,8 @@
 }
 -(void)DongwangFenleCreatPagesView{
     _userHeaderView = [[UIView alloc] init];
-    _categoryView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(RealWidth(0), 0, SCREEN_WIDTH-RealWidth(21), RealWidth(40))];
-    self.categoryView.contentEdgeInsetLeft = RealWidth(19);
+    _categoryView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(RealWidth(0), 0, SCREEN_WIDTH-RealWidth(0), RealWidth(40))];
+    self.categoryView.contentEdgeInsetLeft = RealWidth(13);
     self.categoryView.averageCellSpacingEnabled = NO;
     self.categoryView.cellSpacing = RealWidth(40);
     self.categoryView.titles = self.titles;

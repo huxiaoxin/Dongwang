@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @protocol DongwangTieziBianJiViewDelegate <NSObject>
 -(void)DongwangTieziBianJiViewhiden;
+-(void)DongwangTieziBianJiViewWithBtnIndex:(NSInteger)btnIndex;
 @end
 @interface DongwangTieziBianJiView : UIView
 @property(nonatomic,weak) id <DongwangTieziBianJiViewDelegate>delegate;

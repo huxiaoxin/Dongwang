@@ -51,6 +51,13 @@
 -(void)DongwangTieziBianJiViewhiden{
 [_bianjiView removeFromSuperview];
 }
+-(void)DongwangTieziBianJiViewWithBtnIndex:(NSInteger)btnIndex{
+    if (btnIndex == 0) {
+        
+    }else{
+        
+    }
+}
 #pragma mark--DongwangMyChatSendToolViewDelegate
 -(void)DongwangMyChatSendToolViewUpdateFrame{
     self.topView.height = _topView.ToolViewHeight;

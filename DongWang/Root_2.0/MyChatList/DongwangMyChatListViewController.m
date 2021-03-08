@@ -15,6 +15,7 @@
 #import "DongwangMyChatDetailViewController.h"
 #import "DongwangSendHuatiViewController.h"
 #import "DongwangMyCirleViewController.h"
+#import "DongwangCreatCirleViewController.h"
 @interface DongwangMyChatListViewController ()<JXCategoryViewDelegate,JXPagerViewDelegate, JXPagerMainTableViewGestureDelegate,DongwangMyChatNavViewDelegate,DongwangMyChatHeaderViewDelegate>
 @property (nonatomic, strong) JXCategoryTitleView *categoryView;
 @property (nonatomic, strong) JXPagerView *pagerView;
@@ -195,9 +196,18 @@
 }
 #pragma mark--DongwangMyChatHeaderViewDelegate
 -(void)DongwangMyChatHeaderViewDidSeltecdWithIndex:(NSInteger)CellIndex{
-    DongwangMyCirleViewController * MycirleVc = [[DongwangMyCirleViewController alloc]init];
-    MycirleVc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:MycirleVc animated:YES];
+    if (CellIndex == 0) {
+        DongwangMyCirleViewController * MycirleVc = [[DongwangMyCirleViewController alloc]init];
+        MycirleVc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:MycirleVc animated:YES];
+    }else{
+        //
+        DongwangCreatCirleViewController *creatialVc =[[DongwangCreatCirleViewController alloc]init];
+        creatialVc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:creatialVc animated:YES];
+        
+    }
+   
 }
 /*
 #pragma mark - Navigation

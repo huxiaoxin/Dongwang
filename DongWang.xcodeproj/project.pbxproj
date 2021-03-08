@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F2183B325F5CBCA00F4B528 /* DongwangTieziBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2183B225F5CBCA00F4B528 /* DongwangTieziBtn.m */; };
 		1F22E3F525E4D00800FDA069 /* DongwangDaletouHistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F22E3F425E4D00800FDA069 /* DongwangDaletouHistoryDetailViewController.m */; };
 		1F22E3FA25E4D51900FDA069 /* DongwnagDaletouDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F22E3F925E4D51900FDA069 /* DongwnagDaletouDetailHeaderView.m */; };
 		1F22E3FF25E4DC2700FDA069 /* DongwangTopPrizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F22E3FE25E4DC2700FDA069 /* DongwangTopPrizeView.m */; };
@@ -437,6 +438,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F2183B125F5CBCA00F4B528 /* DongwangTieziBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangTieziBtn.h; sourceTree = "<group>"; };
+		1F2183B225F5CBCA00F4B528 /* DongwangTieziBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangTieziBtn.m; sourceTree = "<group>"; };
 		1F22E3F325E4D00800FDA069 /* DongwangDaletouHistoryDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangDaletouHistoryDetailViewController.h; sourceTree = "<group>"; };
 		1F22E3F425E4D00800FDA069 /* DongwangDaletouHistoryDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangDaletouHistoryDetailViewController.m; sourceTree = "<group>"; };
 		1F22E3F825E4D51900FDA069 /* DongwnagDaletouDetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwnagDaletouDetailHeaderView.h; sourceTree = "<group>"; };
@@ -1830,6 +1833,8 @@
 			children = (
 				4A150E5025F5C100004F2367 /* DongwangTieziBianJiView.h */,
 				4A150E5125F5C100004F2367 /* DongwangTieziBianJiView.m */,
+				1F2183B125F5CBCA00F4B528 /* DongwangTieziBtn.h */,
+				1F2183B225F5CBCA00F4B528 /* DongwangTieziBtn.m */,
 			);
 			path = "帖子编辑view";
 			sourceTree = "<group>";
@@ -3258,6 +3263,7 @@
 				1F3C04AB25F1D81400591505 /* DongwangMyChatSendToolView.m in Sources */,
 				4A140525253ED1880070F5B8 /* StratViewController.m in Sources */,
 				4A605B6E2583158E00682F6B /* MofangEqualSpaceFlowLayoutEvolve.m in Sources */,
+				1F2183B325F5CBCA00F4B528 /* DongwangTieziBtn.m in Sources */,
 				4A54CF252547B354009CE6CC /* UIPasteboard+YYText.m in Sources */,
 				4A8F4D0D25C7A00D003B1721 /* DongwangMyletouHeaderCollectionReusableView.m in Sources */,
 				4A4DC268256F4B30009963C7 /* DongwangZhuantiBangTableViewCell.m in Sources */,

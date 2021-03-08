@@ -39,7 +39,7 @@
         
         SDCycleScrollView * sdcView =  [[SDCycleScrollView alloc]initWithFrame:CGRectMake(0, RealWidth(28), CGRectGetWidth(DongwangContentImgView.frame)-RealWidth(15), RealWidth(30))];
         sdcView.titleLabelBackgroundColor = [UIColor clearColor];
-        sdcView.mainView.backgroundColor = [UIColor clearColor];
+//        sdcView.mainView.backgroundColor = [UIColor clearColor];
         sdcView.onlyDisplayText = YES;
         sdcView.backgroundColor = [UIColor clearColor];
         sdcView.titleLabelTextAlignment = NSTextAlignmentCenter;
