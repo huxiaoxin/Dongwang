@@ -11,6 +11,11 @@
 
 // 占位文字
 static const void *WZBPlaceholderViewKey = &WZBPlaceholderViewKey;
+
+
+//占位文字大小(自添)
+static const void *WZBPlaceholderFontKey = &WZBPlaceholderFontKey;
+
 // 占位文字颜色
 static const void *WZBPlaceholderColorKey = &WZBPlaceholderColorKey;
 // 最大高度
@@ -113,6 +118,19 @@ static const void *WZBTextViewLastHeightKey = &WZBTextViewLastHeightKey;
         return [self wzb_placeholderView].text;
     }
     return nil;
+}
+- (void)setHolderFont:(UIFont *)holderFont{
+    // 如果有placeholder值才去调用，这步很重要
+    if (!self.placeholderExist) {
+        NSLog(@"请先设置placeholder值！");
+    } else {
+        self.wzb_placeholderView.font = holderFont;
+        // 动态添加属性的本质是: 让对象的某个属性与值产生关联
+        objc_setAssociatedObject(self, WZBPlaceholderFontKey, holderFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+}
+-(UIFont *)holderFont{
+return objc_getAssociatedObject(self, WZBPlaceholderFontKey);
 }
 
 - (void)setWzb_placeholderColor:(UIColor *)wzb_placeholderColor
@@ -279,7 +297,8 @@ static bool autoHeight = NO;
     if (placeholderView) {
         self.wzb_placeholderView.frame = self.bounds;
         if (self.wzb_maxHeight < self.bounds.size.height) self.wzb_maxHeight = self.bounds.size.height;
-        self.wzb_placeholderView.font = self.font;
+        
+        self.wzb_placeholderView.font = self.holderFont;
         self.wzb_placeholderView.textAlignment = self.textAlignment;
         self.wzb_placeholderView.textContainerInset = self.textContainerInset;
         self.wzb_placeholderView.hidden = (self.text.length > 0 && self.text);
