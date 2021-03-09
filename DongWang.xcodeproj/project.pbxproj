@@ -38,6 +38,17 @@
 		1F4A330225F06DFB006EB48A /* DongwangChatBtomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4A330125F06DFB006EB48A /* DongwangChatBtomView.m */; };
 		1F4A330825F07349006EB48A /* DongwangCirleListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4A330725F07349006EB48A /* DongwangCirleListView.m */; };
 		1F4A330F25F07B3C006EB48A /* DongwangCirleListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4A330E25F07B3B006EB48A /* DongwangCirleListTableViewCell.m */; };
+		1F53E4BF25F70D8600BD3AE8 /* DongwangCreatCirelHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F53E4BE25F70D8600BD3AE8 /* DongwangCreatCirelHeaderView.m */; };
+		1F53E4C425F70E0500BD3AE8 /* UIImageView+ImgTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F53E4C325F70E0500BD3AE8 /* UIImageView+ImgTapAction.m */; };
+		1F5CDF6725F74F1100F501D8 /* DongwangCirleCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5CDF6625F74F1100F501D8 /* DongwangCirleCenterViewController.m */; };
+		1F5CDF6E25F750C700F501D8 /* DongwangCireSubCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5CDF6D25F750C700F501D8 /* DongwangCireSubCenterViewController.m */; };
+		1F5CDF7325F7517D00F501D8 /* DongwangCirelCenterHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5CDF7225F7517D00F501D8 /* DongwangCirelCenterHeader.m */; };
+		1F5CDF7825F7575900F501D8 /* DongwangCirleTopinfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5CDF7725F7575900F501D8 /* DongwangCirleTopinfoView.m */; };
+		1F5CDF7D25F75EEA00F501D8 /* DongwangCirelCenterInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5CDF7C25F75EEA00F501D8 /* DongwangCirelCenterInfoView.m */; };
+		1F5CDF8225F760E800F501D8 /* DongwangCireCenterInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5CDF8125F760E800F501D8 /* DongwangCireCenterInfoTableViewCell.m */; };
+		1F5CDF8725F7654D00F501D8 /* DongwangCireinfoSectionFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5CDF8625F7654D00F501D8 /* DongwangCireinfoSectionFooter.m */; };
+		1F5CDF8C25F7670D00F501D8 /* DongwangCireSubCenterlistTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5CDF8B25F7670D00F501D8 /* DongwangCireSubCenterlistTableViewCell.m */; };
+		1F5CDF9125F767EA00F501D8 /* DongwangCenterListToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5CDF9025F767EA00F501D8 /* DongwangCenterListToolView.m */; };
 		1FABEACB25EE08C0006BA452 /* DongwangSendChatTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FABEACA25EE08C0006BA452 /* DongwangSendChatTopView.m */; };
 		1FABEAD025EE0D83006BA452 /* DongwangSendChatCenterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FABEACF25EE0D83006BA452 /* DongwangSendChatCenterView.m */; };
 		1FABEAD525EE0EF8006BA452 /* UITextView+WZB.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FABEAD325EE0EF5006BA452 /* UITextView+WZB.m */; };
@@ -500,6 +511,28 @@
 		1F4A330725F07349006EB48A /* DongwangCirleListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangCirleListView.m; sourceTree = "<group>"; };
 		1F4A330D25F07B3B006EB48A /* DongwangCirleListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangCirleListTableViewCell.h; sourceTree = "<group>"; };
 		1F4A330E25F07B3B006EB48A /* DongwangCirleListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangCirleListTableViewCell.m; sourceTree = "<group>"; };
+		1F53E4BD25F70D8600BD3AE8 /* DongwangCreatCirelHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangCreatCirelHeaderView.h; sourceTree = "<group>"; };
+		1F53E4BE25F70D8600BD3AE8 /* DongwangCreatCirelHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangCreatCirelHeaderView.m; sourceTree = "<group>"; };
+		1F53E4C225F70E0500BD3AE8 /* UIImageView+ImgTapAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ImgTapAction.h"; sourceTree = "<group>"; };
+		1F53E4C325F70E0500BD3AE8 /* UIImageView+ImgTapAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ImgTapAction.m"; sourceTree = "<group>"; };
+		1F5CDF6525F74F1100F501D8 /* DongwangCirleCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangCirleCenterViewController.h; sourceTree = "<group>"; };
+		1F5CDF6625F74F1100F501D8 /* DongwangCirleCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangCirleCenterViewController.m; sourceTree = "<group>"; };
+		1F5CDF6C25F750C700F501D8 /* DongwangCireSubCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangCireSubCenterViewController.h; sourceTree = "<group>"; };
+		1F5CDF6D25F750C700F501D8 /* DongwangCireSubCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangCireSubCenterViewController.m; sourceTree = "<group>"; };
+		1F5CDF7125F7517D00F501D8 /* DongwangCirelCenterHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangCirelCenterHeader.h; sourceTree = "<group>"; };
+		1F5CDF7225F7517D00F501D8 /* DongwangCirelCenterHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangCirelCenterHeader.m; sourceTree = "<group>"; };
+		1F5CDF7625F7575900F501D8 /* DongwangCirleTopinfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangCirleTopinfoView.h; sourceTree = "<group>"; };
+		1F5CDF7725F7575900F501D8 /* DongwangCirleTopinfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangCirleTopinfoView.m; sourceTree = "<group>"; };
+		1F5CDF7B25F75EEA00F501D8 /* DongwangCirelCenterInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangCirelCenterInfoView.h; sourceTree = "<group>"; };
+		1F5CDF7C25F75EEA00F501D8 /* DongwangCirelCenterInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangCirelCenterInfoView.m; sourceTree = "<group>"; };
+		1F5CDF8025F760E800F501D8 /* DongwangCireCenterInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangCireCenterInfoTableViewCell.h; sourceTree = "<group>"; };
+		1F5CDF8125F760E800F501D8 /* DongwangCireCenterInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangCireCenterInfoTableViewCell.m; sourceTree = "<group>"; };
+		1F5CDF8525F7654D00F501D8 /* DongwangCireinfoSectionFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangCireinfoSectionFooter.h; sourceTree = "<group>"; };
+		1F5CDF8625F7654D00F501D8 /* DongwangCireinfoSectionFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangCireinfoSectionFooter.m; sourceTree = "<group>"; };
+		1F5CDF8A25F7670D00F501D8 /* DongwangCireSubCenterlistTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangCireSubCenterlistTableViewCell.h; sourceTree = "<group>"; };
+		1F5CDF8B25F7670D00F501D8 /* DongwangCireSubCenterlistTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangCireSubCenterlistTableViewCell.m; sourceTree = "<group>"; };
+		1F5CDF8F25F767EA00F501D8 /* DongwangCenterListToolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangCenterListToolView.h; sourceTree = "<group>"; };
+		1F5CDF9025F767EA00F501D8 /* DongwangCenterListToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangCenterListToolView.m; sourceTree = "<group>"; };
 		1FABEAC925EE08C0006BA452 /* DongwangSendChatTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangSendChatTopView.h; sourceTree = "<group>"; };
 		1FABEACA25EE08C0006BA452 /* DongwangSendChatTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongwangSendChatTopView.m; sourceTree = "<group>"; };
 		1FABEACE25EE0D83006BA452 /* DongwangSendChatCenterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongwangSendChatCenterView.h; sourceTree = "<group>"; };
@@ -1325,6 +1358,8 @@
 			children = (
 				1F443EDE25F21FF800A1C450 /* DongwangCreatCirleViewController.h */,
 				1F443EDF25F21FF800A1C450 /* DongwangCreatCirleViewController.m */,
+				1F53E4BD25F70D8600BD3AE8 /* DongwangCreatCirelHeaderView.h */,
+				1F53E4BE25F70D8600BD3AE8 /* DongwangCreatCirelHeaderView.m */,
 			);
 			path = "创建圈子";
 			sourceTree = "<group>";
@@ -1364,6 +1399,31 @@
 				1F4A330E25F07B3B006EB48A /* DongwangCirleListTableViewCell.m */,
 			);
 			path = "选择圈子View";
+			sourceTree = "<group>";
+		};
+		1F5CDF6425F74EF100F501D8 /* 圈子主页 */ = {
+			isa = PBXGroup;
+			children = (
+				1F5CDF6525F74F1100F501D8 /* DongwangCirleCenterViewController.h */,
+				1F5CDF6625F74F1100F501D8 /* DongwangCirleCenterViewController.m */,
+				1F5CDF6C25F750C700F501D8 /* DongwangCireSubCenterViewController.h */,
+				1F5CDF6D25F750C700F501D8 /* DongwangCireSubCenterViewController.m */,
+				1F5CDF7125F7517D00F501D8 /* DongwangCirelCenterHeader.h */,
+				1F5CDF7225F7517D00F501D8 /* DongwangCirelCenterHeader.m */,
+				1F5CDF7625F7575900F501D8 /* DongwangCirleTopinfoView.h */,
+				1F5CDF7725F7575900F501D8 /* DongwangCirleTopinfoView.m */,
+				1F5CDF7B25F75EEA00F501D8 /* DongwangCirelCenterInfoView.h */,
+				1F5CDF7C25F75EEA00F501D8 /* DongwangCirelCenterInfoView.m */,
+				1F5CDF8025F760E800F501D8 /* DongwangCireCenterInfoTableViewCell.h */,
+				1F5CDF8125F760E800F501D8 /* DongwangCireCenterInfoTableViewCell.m */,
+				1F5CDF8525F7654D00F501D8 /* DongwangCireinfoSectionFooter.h */,
+				1F5CDF8625F7654D00F501D8 /* DongwangCireinfoSectionFooter.m */,
+				1F5CDF8A25F7670D00F501D8 /* DongwangCireSubCenterlistTableViewCell.h */,
+				1F5CDF8B25F7670D00F501D8 /* DongwangCireSubCenterlistTableViewCell.m */,
+				1F5CDF8F25F767EA00F501D8 /* DongwangCenterListToolView.h */,
+				1F5CDF9025F767EA00F501D8 /* DongwangCenterListToolView.m */,
+			);
+			path = "圈子主页";
 			sourceTree = "<group>";
 		};
 		4A022313256E6BC200AAFE82 /* 热门题组 */ = {
@@ -1629,6 +1689,8 @@
 				4A1B20DA25885C0C00AF4282 /* userActionModels.m */,
 				4A1071D925A83AFE00922823 /* UIView+directionBorder.h */,
 				4A1071DA25A83AFE00922823 /* UIView+directionBorder.m */,
+				1F53E4C225F70E0500BD3AE8 /* UIImageView+ImgTapAction.h */,
+				1F53E4C325F70E0500BD3AE8 /* UIImageView+ImgTapAction.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -2668,6 +2730,7 @@
 		4AE481B225B1B25000CE3836 /* MyChatList */ = {
 			isa = PBXGroup;
 			children = (
+				1F5CDF6425F74EF100F501D8 /* 圈子主页 */,
 				4A150E4D25F5C0D7004F2367 /* 帖子编辑view */,
 				1F443EDD25F21FDC00A1C450 /* 创建圈子 */,
 				1F443EC625F20DE900A1C450 /* 我的圈子 */,
@@ -3069,9 +3132,11 @@
 				4A0D3F44257C8684002013CD /* DongwangHotTizuModel.m in Sources */,
 				4A1403C1253E87DD0070F5B8 /* NSDictionary+DeleteNull.m in Sources */,
 				4A348EE72550FD3B00793D59 /* MytestCollectionViewCell.m in Sources */,
+				1F5CDF7325F7517D00F501D8 /* DongwangCirelCenterHeader.m in Sources */,
 				4AAE47B625483B7D00436EE2 /* AFManagerTool.m in Sources */,
 				4ABF55382585D82A006061E5 /* DongwnagDuihuanBtn.m in Sources */,
 				4A54CF212547B354009CE6CC /* YYTextRubyAnnotation.m in Sources */,
+				1F5CDF7D25F75EEA00F501D8 /* DongwangCirelCenterInfoView.m in Sources */,
 				4AFAF3DE25807FD900383B6B /* DongwangMofangImgView.m in Sources */,
 				4A140342253E86780070F5B8 /* UIColor+ColorChange.m in Sources */,
 				1F22E42625E503E500FDA069 /* DongwangMyHistoryModel.m in Sources */,
@@ -3119,6 +3184,7 @@
 				4A41CD24257F5E23007FD0C5 /* DongwangHomeViewModel.m in Sources */,
 				4A4708F82566700200776EF4 /* DongwangMyViewModel.m in Sources */,
 				4AFAF3C9258065CD00383B6B /* DongwangMofangModel.m in Sources */,
+				1F5CDF8725F7654D00F501D8 /* DongwangCireinfoSectionFooter.m in Sources */,
 				4AFAFFDF25A6DC9B0070BD1E /* DongwangMallMsgScrollView.m in Sources */,
 				1F4620EF25ECDE3500394C20 /* DongwangChatBtn.m in Sources */,
 				4A77CFCA2576342C00612BB4 /* EqualSpaceFlowLayoutEvolve.m in Sources */,
@@ -3143,6 +3209,7 @@
 				4A31078125BFAED9002212C7 /* DongwangAlipayTableViewCell.m in Sources */,
 				4A14049B253ECD500070F5B8 /* CHImageView.m in Sources */,
 				1F22E41A25E4FB5D00FDA069 /* DongwangDaletouDetailFooterView.m in Sources */,
+				1F5CDF6725F74F1100F501D8 /* DongwangCirleCenterViewController.m in Sources */,
 				4AD08CF3256D114F003B31B7 /* DongwangAlipayAlterView.m in Sources */,
 				4AC354C0256BD5C8000F95A9 /* DongwangMsgModel.m in Sources */,
 				4A140493253ECBBE0070F5B8 /* UITextView+CHPlaceHolder.m in Sources */,
@@ -3161,6 +3228,8 @@
 				4A140494253ECBBE0070F5B8 /* UIView+CHFrame.m in Sources */,
 				4A21270D25B41028004B28A0 /* DongwangDaletouViewController.m in Sources */,
 				4A37198F25B5AECB004D7388 /* DongwangNewBangdingNextViewController_V3.m in Sources */,
+				1F5CDF8225F760E800F501D8 /* DongwangCireCenterInfoTableViewCell.m in Sources */,
+				1F5CDF9125F767EA00F501D8 /* DongwangCenterListToolView.m in Sources */,
 				4A5B9A402574B0CD009358AF /* DongwangSigningQiandaoFooterView.m in Sources */,
 				1FABEAD025EE0D83006BA452 /* DongwangSendChatCenterView.m in Sources */,
 				4A140542253EE87A0070F5B8 /* DongwangQidonyeViewController.m in Sources */,
@@ -3266,7 +3335,9 @@
 				1F2183B325F5CBCA00F4B528 /* DongwangTieziBtn.m in Sources */,
 				4A54CF252547B354009CE6CC /* UIPasteboard+YYText.m in Sources */,
 				4A8F4D0D25C7A00D003B1721 /* DongwangMyletouHeaderCollectionReusableView.m in Sources */,
+				1F53E4BF25F70D8600BD3AE8 /* DongwangCreatCirelHeaderView.m in Sources */,
 				4A4DC268256F4B30009963C7 /* DongwangZhuantiBangTableViewCell.m in Sources */,
+				1F53E4C425F70E0500BD3AE8 /* UIImageView+ImgTapAction.m in Sources */,
 				4A4FC55025C922E200D1C4A1 /* DongwangDaletouViewModel.m in Sources */,
 				4A204ABF2582124300C0CBBA /* WaterfallColectionLayout.m in Sources */,
 				1F443EC925F20DFF00A1C450 /* DongwangMyCirleViewController.m in Sources */,
@@ -3307,6 +3378,7 @@
 				4AD08CEA256C9592003B31B7 /* UILabel+ChangeLineSpaceAndWordSpace.m in Sources */,
 				4AEC3A20254A5F3C001C78A0 /* UserManager.m in Sources */,
 				4AAE479B2548380500436EE2 /* DongwangFenleiViewController.m in Sources */,
+				1F5CDF6E25F750C700F501D8 /* DongwangCireSubCenterViewController.m in Sources */,
 				4A54CF292547B354009CE6CC /* YYTextWeakProxy.m in Sources */,
 				1F22E3FA25E4D51900FDA069 /* DongwnagDaletouDetailHeaderView.m in Sources */,
 				4AE7CB1F255BE4A300200140 /* DongwangShourumingxiViewController.m in Sources */,
@@ -3316,6 +3388,7 @@
 				4A54CF122547B354009CE6CC /* YYTextView.m in Sources */,
 				4AE7BD1925BA7C3D00CD9D57 /* DongwangemtyView.m in Sources */,
 				4A204A772581AE5C00C0CBBA /* DongwangMasonryCollectionViewCell.m in Sources */,
+				1F5CDF7825F7575900F501D8 /* DongwangCirleTopinfoView.m in Sources */,
 				4A54CF552547DE94009CE6CC /* EasyLodingView.m in Sources */,
 				4AAC6B5825592ADE00705B4B /* CHButton.m in Sources */,
 				4AE7CAEF255BC72900200140 /* DongwangMyyueHeaderView.m in Sources */,
@@ -3424,6 +3497,7 @@
 				1F4620DB25EC842400394C20 /* DongwangMyChatNavView.m in Sources */,
 				4A8F4D1D25C7DC45003B1721 /* DongwangTimeoutView.m in Sources */,
 				4AF2C23F256691130007E1A4 /* DongwangAutorAlterView.m in Sources */,
+				1F5CDF8C25F7670D00F501D8 /* DongwangCireSubCenterlistTableViewCell.m in Sources */,
 				4AE7CAF5255BCAF400200140 /* DongwangMyyueTableViewCell.m in Sources */,
 				4A605B9925833F6200682F6B /* EqualSpaceFlowLayoutEvolveSecond.m in Sources */,
 				4A1403D9253E889A0070F5B8 /* DongwangBaseViewController.m in Sources */,

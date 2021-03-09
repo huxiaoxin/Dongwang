@@ -16,6 +16,7 @@
 #import "DongwangSendHuatiViewController.h"
 #import "DongwangMyCirleViewController.h"
 #import "DongwangCreatCirleViewController.h"
+#import "DongwangCirleCenterViewController.h"
 @interface DongwangMyChatListViewController ()<JXCategoryViewDelegate,JXPagerViewDelegate, JXPagerMainTableViewGestureDelegate,DongwangMyChatNavViewDelegate,DongwangMyChatHeaderViewDelegate>
 @property (nonatomic, strong) JXCategoryTitleView *categoryView;
 @property (nonatomic, strong) JXPagerView *pagerView;
@@ -200,12 +201,16 @@
         DongwangMyCirleViewController * MycirleVc = [[DongwangMyCirleViewController alloc]init];
         MycirleVc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:MycirleVc animated:YES];
-    }else{
+    }else if (CellIndex == 1){
         //
         DongwangCreatCirleViewController *creatialVc =[[DongwangCreatCirleViewController alloc]init];
         creatialVc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:creatialVc animated:YES];
         
+    }else{
+        DongwangCirleCenterViewController * cirleCenterVc = [[DongwangCirleCenterViewController alloc]init];
+        cirleCenterVc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:cirleCenterVc animated:YES];
     }
    
 }

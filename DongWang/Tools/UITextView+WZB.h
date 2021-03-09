@@ -16,6 +16,8 @@ typedef void(^textViewHeightDidChangedBlock)(CGFloat currentTextViewHeight);
 @property (nonatomic, copy) NSString *wzb_placeholder;
 @property (nonatomic, copy) NSString *placeholder NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, "请使用wzb_placeholder");
 
+@property(nonatomic,strong) UIFont * holderFont;
+
 /* 占位文字颜色 */
 @property (nonatomic, strong) UIColor *wzb_placeholderColor;
 @property (nonatomic, strong) UIColor *placeholderColor NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, "请使用wzb_placeholderColor");
