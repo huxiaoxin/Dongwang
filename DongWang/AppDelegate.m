@@ -372,7 +372,7 @@
         UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         UITableView.appearance.estimatedRowHeight = 0;
         UITableView.appearance.estimatedSectionFooterHeight = 0;
-        UITableView.appearance.estimatedSectionHeaderHeight = 0;
+        UITableView.appearance.estimatedSecti   onHeaderHeight = 0;
     }
 }
 -(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{

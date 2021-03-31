@@ -152,19 +152,19 @@
 #pragma mark -- ipurl
 #define BASE_IPURL @"http://192.168.3.155" // http://192.168.3.137:8080| http://192.168.3.157
 
-  #define Protocl_Url @"http://192.168.3.157/"  //隐私协议 用户政策
-   //#define Protocl_Url @"http://47.101.168.243:91/preview/"  //隐私协议 用户政策
-   #define jifenpaifan @"dongwang_h5/integral_flip"  //积分翻牌测试
+  //#define Protocl_Url @"http://192.168.3.157/"  //隐私协议 用户政策
+   #define Protocl_Url @"http://47.101.168.243:91/preview/"  //隐私协议 用户政策
+//#define jifenpaifan @"dongwang_h5/integral_flip"  //积分翻牌测试
  #define daletou @"dongwang_h5/document/index.html?type=grandLotto"  //大乐透规则
 
- //#define jifenpaifan @"dongwang_h5/integral_flip/index.html"  //积分翻牌予发布
+ #define jifenpaifan @"dongwang_h5/integral_flip/index.html"  //积分翻牌予发布
 
 #define MyintegralExchange  @"/dongwang_h5/document/index.html?type=integralExchange" //积分兑换规则
   // #define Dongwang_BaseUrl @"http://192.168.3.180:8069/" //本机
-    #define Dongwang_BaseUrl   @"http://192.168.3.157:8069/" //测试
+   // #define Dongwang_BaseUrl   @"http://192.168.3.157:8069/" //测试
   //#define Dongwang_BaseUrl      @"http://3621g2l767.wicp.vip:17570/"//外网
   //#define Dongwang_BaseUrl @"http://192.168.3.117:8069/" //本机
-  //#define Dongwang_BaseUrl @"http://47.101.168.243:8090/" //生产
+#define Dongwang_BaseUrl @"http://47.101.168.243:8090/" //生产
 
 
 #define User_Login        @"dongwang-app/app/user/login/v1"  //用户登录
